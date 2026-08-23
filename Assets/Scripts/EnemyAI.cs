@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Detection")]
     public Transform player;
     public float detectionRange = 4f;
+    public float alertDetectionRangeMultiplier = 1.5f;
 
     [Header("Patrol")]
     public Transform[] patrolPoints;
@@ -30,9 +31,12 @@ public class EnemyAI : MonoBehaviour
     private Vector2 alertTarget;
     private float alertStateTimer;
 
+    private AlarmController alarmController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        alarmController = FindFirstObjectByType<AlarmController>();
     }
 
     void FixedUpdate()
@@ -83,7 +87,14 @@ public class EnemyAI : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        return distanceToPlayer <= detectionRange;
+        float effectiveRange = detectionRange;
+
+        if (alarmController != null && alarmController.currentState == AlarmController.AlarmState.Alert)
+        {
+            effectiveRange *= alertDetectionRangeMultiplier;
+        }
+
+        return distanceToPlayer <= effectiveRange;
     }
 
     // Called by systems like SecurityCamera when they spot the player

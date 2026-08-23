@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraControlConsole : Interactable
 {
     public PoweredObject doorToUnlock;
+    public SecuritySensor[] sensorsToDisable;
     private bool used = false;
 
     public override void Interact()
@@ -16,6 +17,12 @@ public class CameraControlConsole : Interactable
         SecurityCamera[] cameras = FindObjectsByType<SecurityCamera>(FindObjectsSortMode.None);
         foreach (SecurityCamera camera in cameras)
             camera.DisableCamera();
+
+        foreach (SecuritySensor sensor in sensorsToDisable)
+        {
+            if (sensor != null)
+                sensor.Disable();
+        }
 
         if (doorToUnlock != null && !doorToUnlock.isPowered)
             doorToUnlock.TogglePower();

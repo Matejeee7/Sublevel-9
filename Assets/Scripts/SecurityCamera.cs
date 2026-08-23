@@ -186,6 +186,15 @@ public class SecurityCamera : MonoBehaviour
             "SECURITY CAMERA DETECTED PLAYER! Alerting nearby security."
         );
 
+        AlarmController alarmController =
+            FindFirstObjectByType<AlarmController>();
+
+        if (alarmController != null)
+        {
+            alarmController.TriggerAlert(player.position);
+            return;
+        }
+
         EnemyAI[] enemies =
             FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
 
