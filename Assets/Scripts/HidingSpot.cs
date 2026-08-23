@@ -18,10 +18,12 @@ public class HidingSpot : MonoBehaviour
             if (playerStealth.isHidden)
             {
                 playerStealth.Unhide(exitPoint);
+                InteractionPromptUI.Show("E - Hide");
             }
             else
             {
                 playerStealth.Hide(hidePoint);
+                InteractionPromptUI.Show("E - Exit Locker");
             }
         }
     }
@@ -33,7 +35,7 @@ public class HidingSpot : MonoBehaviour
             playerInRange = true;
             playerStealth = other.GetComponent<PlayerStealth>();
 
-            Debug.Log("Press E to enter locker");
+            InteractionPromptUI.Show("E - Hide");
         }
     }
 
@@ -43,6 +45,7 @@ public class HidingSpot : MonoBehaviour
         {
             playerInRange = false;
             playerStealth = null;
+            InteractionPromptUI.Hide();
         }
     }
 }

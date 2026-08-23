@@ -6,6 +6,18 @@ public class KeycardDoor : MonoBehaviour
 
     private bool unlocked = false;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && !unlocked)
+            InteractionPromptUI.Show("E - Unlock Door");
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            InteractionPromptUI.Hide();
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Player"))
@@ -46,6 +58,8 @@ public class KeycardDoor : MonoBehaviour
 
         if (sr != null)
             sr.color = Color.green;
+
+        InteractionPromptUI.Hide();
 
         Debug.Log("Security door unlocked.");
     }

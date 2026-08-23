@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            Debug.Log(interactable.interactionMessage);
+            InteractionPromptUI.Show(interactable.interactionMessage);
         }
     }
 
@@ -30,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable != null && interactable == currentInteractable)
         {
             currentInteractable = null;
-            Debug.Log("Left interactable");
+            InteractionPromptUI.Hide();
         }
     }
 }
