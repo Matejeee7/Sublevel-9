@@ -30,7 +30,6 @@ public class SecurityCamera : MonoBehaviour
     private float startRotation;
     private float detectionTimer;
 
-    private PlayerHealth playerHealth;
     private PlayerStealth playerStealth;
 
     private bool cameraDisabled = false;
@@ -60,9 +59,6 @@ public class SecurityCamera : MonoBehaviour
 
         if (player != null)
         {
-            playerHealth =
-                player.GetComponent<PlayerHealth>();
-
             playerStealth =
                 player.GetComponent<PlayerStealth>();
         }
@@ -187,12 +183,15 @@ public class SecurityCamera : MonoBehaviour
     private void PlayerDetected()
     {
         Debug.Log(
-            "SECURITY CAMERA DETECTED PLAYER!"
+            "SECURITY CAMERA DETECTED PLAYER! Alerting nearby security."
         );
 
-        if (playerHealth != null)
+        EnemyAI[] enemies =
+            FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
+
+        foreach (EnemyAI enemy in enemies)
         {
-            playerHealth.Die();
+            enemy.Alert(player.position);
         }
     }
 

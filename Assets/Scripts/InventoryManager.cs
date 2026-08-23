@@ -1,6 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public bool hasLevel1Keycard = false;
+    private readonly HashSet<string> keycards = new HashSet<string>();
+
+    public bool HasKeycard(string keycardId)
+    {
+        return keycards.Contains(keycardId);
+    }
+
+    public void AddKeycard(string keycardId)
+    {
+        keycards.Add(keycardId);
+    }
 }

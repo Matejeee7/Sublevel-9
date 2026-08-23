@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    private enum State { Patrol, Investigate, Chase, Search }
+
     [Header("Movement")]
     public float moveSpeed = 2f;
+    public float chaseSpeedMultiplier = 1.3f;
+    public float arriveThreshold = 0.2f;
 
     [Header("Detection")]
     public Transform player;
@@ -13,11 +17,18 @@ public class EnemyAI : MonoBehaviour
     public Transform[] patrolPoints;
     public float patrolWaitTime = 1f;
 
+    [Header("Alert")]
+    public float investigateWaitTime = 2f;
+    public float searchTime = 3f;
+
     private Rigidbody2D rb;
+    private State state = State.Patrol;
 
     private int currentPatrolIndex = 0;
-    private bool isChasing = false;
-    private float waitTimer;
+    private float patrolWaitTimer;
+
+    private Vector2 alertTarget;
+    private float alertStateTimer;
 
     void Start()
     {
@@ -26,46 +37,71 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null)
+        if (rb == null)
             return;
 
-        float distanceToPlayer =
-            Vector2.Distance(transform.position, player.position);
+        bool playerVisible = IsPlayerVisible();
+
+        if (playerVisible)
+        {
+            state = State.Chase;
+        }
+        else if (state == State.Chase)
+        {
+            // Player just broke line of detection - go check their last known spot.
+            state = State.Search;
+            alertTarget = player.position;
+            alertStateTimer = 0f;
+        }
+
+        switch (state)
+        {
+            case State.Patrol:
+                Patrol();
+                break;
+            case State.Chase:
+                Chase();
+                break;
+            case State.Investigate:
+                GoToAlertTargetThenReturn(investigateWaitTime);
+                break;
+            case State.Search:
+                GoToAlertTargetThenReturn(searchTime);
+                break;
+        }
+    }
+
+    private bool IsPlayerVisible()
+    {
+        if (player == null)
+            return false;
 
         PlayerStealth playerStealth = player.GetComponent<PlayerStealth>();
 
         if (playerStealth != null && playerStealth.isHidden)
-        {
-            isChasing = false;
-            Patrol();
-            return;
-        }
+            return false;
 
-        if (distanceToPlayer <= detectionRange)
-        {
-            isChasing = true;
-        }
-        else if (distanceToPlayer > detectionRange + 1f)
-        {
-            isChasing = false;
-        }
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (isChasing)
-        {
-            ChasePlayer();
-        }
-        else
-        {
-            Patrol();
-        }
+        return distanceToPlayer <= detectionRange;
     }
 
-    void ChasePlayer()
+    // Called by systems like SecurityCamera when they spot the player
+    // without killing them outright - the enemy investigates instead.
+    public void Alert(Vector2 position)
     {
-        Vector2 direction =
-            (player.position - transform.position).normalized;
+        if (state == State.Chase)
+            return;
 
-        rb.linearVelocity = direction * moveSpeed;
+        state = State.Investigate;
+        alertTarget = position;
+        alertStateTimer = 0f;
+    }
+
+    void Chase()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        rb.linearVelocity = direction * moveSpeed * chaseSpeedMultiplier;
     }
 
     void Patrol()
@@ -76,24 +112,20 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        Transform targetPoint =
-            patrolPoints[currentPatrolIndex];
+        Transform targetPoint = patrolPoints[currentPatrolIndex];
 
-        Vector2 direction =
-            (targetPoint.position - transform.position).normalized;
-
+        Vector2 direction = (targetPoint.position - transform.position).normalized;
         rb.linearVelocity = direction * moveSpeed;
 
-        float distance =
-            Vector2.Distance(transform.position, targetPoint.position);
+        float distance = Vector2.Distance(transform.position, targetPoint.position);
 
-        if (distance < 0.2f)
+        if (distance < arriveThreshold)
         {
             rb.linearVelocity = Vector2.zero;
 
-            waitTimer += Time.fixedDeltaTime;
+            patrolWaitTimer += Time.fixedDeltaTime;
 
-            if (waitTimer >= patrolWaitTime)
+            if (patrolWaitTimer >= patrolWaitTime)
             {
                 currentPatrolIndex++;
 
@@ -102,8 +134,29 @@ public class EnemyAI : MonoBehaviour
                     currentPatrolIndex = 0;
                 }
 
-                waitTimer = 0f;
+                patrolWaitTimer = 0f;
             }
+        }
+    }
+
+    void GoToAlertTargetThenReturn(float waitTime)
+    {
+        Vector2 toTarget = alertTarget - (Vector2)transform.position;
+        float distance = toTarget.magnitude;
+
+        if (distance > arriveThreshold)
+        {
+            rb.linearVelocity = toTarget.normalized * moveSpeed;
+            return;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        alertStateTimer += Time.fixedDeltaTime;
+
+        if (alertStateTimer >= waitTime)
+        {
+            state = State.Patrol;
+            alertStateTimer = 0f;
         }
     }
 

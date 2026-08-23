@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class KeycardPickup : MonoBehaviour
 {
+    public string keycardId = "Level1Keycard";
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player"))
@@ -13,9 +15,9 @@ public class KeycardPickup : MonoBehaviour
         if (inventory == null)
             return;
 
-        inventory.hasLevel1Keycard = true;
+        inventory.AddKeycard(keycardId);
 
-        Debug.Log("Level 1 Keycard acquired");
+        Debug.Log(keycardId + " acquired");
 
         Destroy(gameObject);
     }

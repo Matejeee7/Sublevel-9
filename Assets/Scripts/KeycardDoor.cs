@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class KeycardDoor : MonoBehaviour
 {
+    public string requiredKeycardId = "Level1Keycard";
+
     private bool unlocked = false;
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -17,7 +19,7 @@ public class KeycardDoor : MonoBehaviour
             if (inventory == null)
                 return;
 
-            if (inventory.hasLevel1Keycard)
+            if (inventory.HasKeycard(requiredKeycardId))
             {
                 UnlockDoor();
             }

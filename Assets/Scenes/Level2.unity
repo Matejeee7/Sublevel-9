@@ -2085,8 +2085,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a2fc58bab1fd1c4397d6a5d12c6c4ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
+  requiredKeycardId: ResearchAccessCard
 --- !u!1 &508092967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,8 +2875,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f478e3f932b1de4cbf7b9183a865ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
+  keycardId: ResearchAccessCard
 --- !u!1 &712090490
 GameObject:
   m_ObjectHideFlags: 0
