@@ -21,6 +21,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void LoadCurrentLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(GameProgress.GetCurrentLevel());
+    }
+
     public void LoadGameOverScene()
     {
         Time.timeScale = 1f;
