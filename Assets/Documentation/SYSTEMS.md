@@ -83,12 +83,16 @@ and how they connect — read the source for exact field names.
 ## Enemies
 
 - **EnemyAI** — a small state machine: `Patrol` / `Chase` / `Investigate` /
-  `Search`. `Chase` triggers when the player is within `detectionRange` and
-  not hidden (boosted during `AlarmController.Alert`); losing sight drops to
-  `Search` (go to the last known position, wait, give up back to `Patrol`).
-  `Alert(position)` is the public hook cameras/alarms use to send an enemy to
-  investigate without a direct sighting. **Physical contact with the player
-  (not hidden) is the only thing that calls `PlayerHealth.Die()`.**
+  `Search`. `Chase` triggers when the player is within `detectionRange`, not
+  hidden (boosted during `AlarmController.Alert`), **and** in actual line of
+  sight — a single `Physics2D.Raycast` against `obstacleMask`
+  (Obstacle + VisionBlocker), the same principle `SecurityCamera` uses for
+  its vision cone, so a closed door or wall blocks detection instead of the
+  enemy seeing through it. Losing sight drops to `Search` (go to the last
+  known position, wait, give up back to `Patrol`). `Alert(position)` is the
+  public hook cameras/alarms use to send an enemy to investigate without a
+  direct sighting. **Physical contact with the player (not hidden) is the
+  only thing that calls `PlayerHealth.Die()`.**
 - **HidingSpot** — E to hide/unhide at a locker; shows the interaction prompt
   for both states.
 
@@ -126,6 +130,21 @@ and how they connect — read the source for exact field names.
 - **InteractionPromptUI** — one shared "E - ..." prompt per scene, driven by
   a static `Show(message)` / `Hide()` so any interaction script can use it
   without a per-object UI reference.
+- **ObjectiveManager** — one small, persistent objective line per scene
+  (top-left, unobtrusive), driven by a static `SetObjective(text)`. No
+  per-level subclass and no timers: every level just sets an optional
+  `nextObjective` string on the existing pickup/console that should advance
+  it (`KeycardPickup`, `GeneratorUpgrade`, `CameraControlConsole`,
+  `AlarmResetConsole`, `CodeClueTerminal`), plus `AlarmController.
+  alertObjective` for what to show while an alert is active - configured per
+  level so it never tells the player to find a console that doesn't exist
+  (Level8/9 have no `AlarmResetConsole`, so their alert objective says
+  "break line of sight" instead).
+- **FeedbackUI** — brief on-screen messages ("Keycard required", "Not enough
+  power", "Alarm reset", "Laser disabled", ...), a static `Flash(message)`
+  auto-hidden after a couple of seconds. Deliberately a separate UI element
+  from both `InteractionPromptUI` and `ObjectiveManager` so the three never
+  overwrite each other.
 - **RooftopSequence** — the escape cutscene: a plain coroutine (not Timeline)
   that walks the player to the helicopter, lifts it off, fades to black via a
   `CanvasGroup`, and loads `WinScene`.
