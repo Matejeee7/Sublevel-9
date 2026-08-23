@@ -4,6 +4,7 @@ public class CameraControlConsole : Interactable
 {
     public PoweredObject doorToUnlock;
     public SecuritySensor[] sensorsToDisable;
+    public string nextObjective = "";
     private bool used = false;
 
     public override void Interact()
@@ -32,5 +33,7 @@ public class CameraControlConsole : Interactable
 
         used = true;
         Debug.Log("SECURITY CAMERAS OFFLINE. Specimen Lab access enabled.");
+        FeedbackUI.Flash("Camera network disabled.");
+        ObjectiveManager.SetObjective(nextObjective);
     }
 }

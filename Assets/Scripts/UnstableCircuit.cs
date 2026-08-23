@@ -22,13 +22,17 @@ public class UnstableCircuit : MonoBehaviour
         if (target.isPowered)
         {
             if (!wasPowered)
+            {
                 timer = 0f;
+                FeedbackUI.Flash("Temporary power activated.");
+            }
 
             timer += Time.deltaTime;
 
             if (timer >= activeDuration)
             {
                 target.TogglePower();
+                FeedbackUI.Flash("Power dropped.");
             }
             else if (timer >= activeDuration - warningTime)
             {

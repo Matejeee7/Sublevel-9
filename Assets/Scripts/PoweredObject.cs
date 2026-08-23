@@ -38,6 +38,7 @@ public class PoweredObject : MonoBehaviour
             else
             {
                 Debug.Log("Not enough power!");
+                FeedbackUI.Flash("Not enough power.");
             }
         }
         else

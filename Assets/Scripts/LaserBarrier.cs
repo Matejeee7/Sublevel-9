@@ -10,6 +10,8 @@ public class LaserBarrier : MonoBehaviour
 
     private SpriteRenderer sr;
     private Collider2D col;
+    private bool wasActive;
+    private bool initialized;
 
     void Start()
     {
@@ -29,5 +31,16 @@ public class LaserBarrier : MonoBehaviour
 
         if (sr != null)
             sr.color = active ? new Color(1f, 0.1f, 0.1f, 0.85f) : new Color(0.3f, 0.3f, 0.3f, 0.15f);
+
+        if (!initialized)
+        {
+            wasActive = active;
+            initialized = true;
+        }
+        else if (active != wasActive)
+        {
+            FeedbackUI.Flash(active ? "Laser active." : "Laser disabled.");
+            wasActive = active;
+        }
     }
 }

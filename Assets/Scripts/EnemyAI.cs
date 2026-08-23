@@ -14,6 +14,9 @@ public class EnemyAI : MonoBehaviour
     public float detectionRange = 4f;
     public float alertDetectionRangeMultiplier = 1.5f;
 
+    [Header("Line Of Sight")]
+    public LayerMask obstacleMask;
+
     [Header("Patrol")]
     public Transform[] patrolPoints;
     public float patrolWaitTime = 1f;
@@ -94,7 +97,26 @@ public class EnemyAI : MonoBehaviour
             effectiveRange *= alertDetectionRangeMultiplier;
         }
 
-        return distanceToPlayer <= effectiveRange;
+        if (distanceToPlayer > effectiveRange)
+            return false;
+
+        return HasLineOfSight(player.position, distanceToPlayer);
+    }
+
+    // Same principle as SecurityCamera's obstacle check: a single raycast
+    // toward the target on the shared Obstacle/VisionBlocker layers. A wall
+    // or a closed door blocks it exactly like it blocks a camera's view.
+    private bool HasLineOfSight(Vector2 targetPosition, float distance)
+    {
+        if (distance < 0.01f)
+            return true;
+
+        Vector2 origin = transform.position;
+        Vector2 direction = (targetPosition - origin) / distance;
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, obstacleMask);
+
+        return hit.collider == null;
     }
 
     // Called by systems like SecurityCamera when they spot the player

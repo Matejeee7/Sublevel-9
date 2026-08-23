@@ -38,6 +38,7 @@ public class KeycardDoor : MonoBehaviour
             else
             {
                 Debug.Log("Keycard required.");
+                FeedbackUI.Flash("Keycard required.");
             }
         }
     }
@@ -60,6 +61,7 @@ public class KeycardDoor : MonoBehaviour
             sr.color = Color.green;
 
         InteractionPromptUI.Hide();
+        FeedbackUI.Flash("Door unlocked.");
 
         Debug.Log("Security door unlocked.");
     }

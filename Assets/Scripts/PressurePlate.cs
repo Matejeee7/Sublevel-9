@@ -8,6 +8,7 @@ public class PressurePlate : MonoBehaviour
     public GameObject doorToUnlock;
 
     private int weightCount = 0;
+    private bool wasActive = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,5 +47,11 @@ public class PressurePlate : MonoBehaviour
         SpriteRenderer sr = doorToUnlock.GetComponent<SpriteRenderer>();
         if (sr != null)
             sr.color = active ? Color.green : new Color(0.75f, 0.2f, 0.2f);
+
+        if (active != wasActive)
+        {
+            FeedbackUI.Flash(active ? "Pressure plate activated." : "Pressure plate released.");
+            wasActive = active;
+        }
     }
 }

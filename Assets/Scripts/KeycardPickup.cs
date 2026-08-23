@@ -3,6 +3,7 @@ using UnityEngine;
 public class KeycardPickup : MonoBehaviour
 {
     public string keycardId = "Level1Keycard";
+    public string nextObjective = "";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +19,8 @@ public class KeycardPickup : MonoBehaviour
         inventory.AddKeycard(keycardId);
 
         Debug.Log(keycardId + " acquired");
+        FeedbackUI.Flash(keycardId + " acquired");
+        ObjectiveManager.SetObjective(nextObjective);
 
         Destroy(gameObject);
     }

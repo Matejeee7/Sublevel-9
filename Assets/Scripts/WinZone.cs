@@ -14,6 +14,7 @@ public class WinZone : MonoBehaviour
         if (requiredPowerObject != null && !requiredPowerObject.isPowered)
         {
             Debug.Log("Elevator has no power.");
+            FeedbackUI.Flash("Elevator has no power.");
             return;
         }
 

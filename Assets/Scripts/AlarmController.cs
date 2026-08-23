@@ -10,6 +10,9 @@ public class AlarmController : MonoBehaviour
     public float suspiciousDecayTime = 8f;
     public float alertDecayTime = 15f;
 
+    [Header("Objective feedback (optional)")]
+    public string alertObjective = "Reset the alarm at a security console.";
+
     private float stateTimer;
     private EnemyAI[] enemies;
 
@@ -41,13 +44,24 @@ public class AlarmController : MonoBehaviour
         if (currentState == AlarmState.Alert)
             return;
 
+        bool wasNormal = currentState == AlarmState.Normal;
         SetState(AlarmState.Suspicious);
+
+        if (wasNormal)
+            FeedbackUI.Flash("Security is suspicious...");
     }
 
     // The player was directly seen - full alert, security responds.
     public void TriggerAlert(Vector2 sourcePosition)
     {
+        bool wasAlert = currentState == AlarmState.Alert;
         SetState(AlarmState.Alert);
+
+        if (!wasAlert)
+        {
+            FeedbackUI.Flash("ALERT - security responding!");
+            ObjectiveManager.SetObjective(alertObjective);
+        }
 
         foreach (EnemyAI enemy in enemies)
         {
