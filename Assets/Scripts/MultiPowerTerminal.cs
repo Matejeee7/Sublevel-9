@@ -9,22 +9,31 @@ public class MultiPowerTerminal : Interactable
     [Header("UI")]
     public GameObject terminalPanel;
     public TMP_Text optionsText;
+    public TMP_Text powerUsageText;
+
+    // Global ownership so the pause menu and the interaction prompt can
+    // always ask "is a terminal currently capturing input" without holding
+    // a reference to a specific instance.
+    public static bool IsAnyTerminalOpen { get; private set; }
+    private static MultiPowerTerminal openTerminal;
 
     private bool isTerminalOpen = false;
     private PlayerMovement playerMovement;
+    private PowerManager powerManager;
+
+    void Awake()
+    {
+        // Defensive reset: these statics must never leak a "terminal open"
+        // state in from a previous scene (domain doesn't reload between
+        // scene loads in a build), so every terminal clears them on its
+        // own Awake, before any Interact() can run.
+        IsAnyTerminalOpen = false;
+        openTerminal = null;
+    }
 
     public override void Interact()
     {
-        isTerminalOpen = !isTerminalOpen;
-
-        if (isTerminalOpen)
-        {
-            OpenTerminal();
-        }
-        else
-        {
-            CloseTerminal();
-        }
+        OpenTerminal();
     }
 
     void Update()
@@ -32,7 +41,7 @@ public class MultiPowerTerminal : Interactable
         if (!isTerminalOpen)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CloseTerminal();
             return;
@@ -50,51 +59,76 @@ public class MultiPowerTerminal : Interactable
 
     private void OpenTerminal()
     {
-        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        isTerminalOpen = true;
+        IsAnyTerminalOpen = true;
+        openTerminal = this;
 
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         if (playerMovement != null)
             playerMovement.enabled = false;
 
         if (terminalPanel != null)
             terminalPanel.SetActive(true);
 
+        InteractionPromptUI.Hide();
+
         RefreshUI();
     }
 
-    private void CloseTerminal()
+    // reenableMovement is false when the pause menu is the one closing this
+    // terminal (Esc flow) - movement stays owned by the pause menu instead
+    // of flicking back on for a frame before Time.timeScale takes over.
+    public void CloseTerminal(bool reenableMovement = true)
     {
         isTerminalOpen = false;
+        IsAnyTerminalOpen = false;
+        if (openTerminal == this)
+            openTerminal = null;
 
-        if (playerMovement != null)
+        if (playerMovement != null && reenableMovement)
             playerMovement.enabled = true;
 
         if (terminalPanel != null)
             terminalPanel.SetActive(false);
     }
 
+    public static void CloseAnyOpenTerminal(bool reenableMovement = true)
+    {
+        if (openTerminal != null)
+            openTerminal.CloseTerminal(reenableMovement);
+    }
+
     private void RefreshUI()
     {
-        if (optionsText == null)
-            return;
+        if (powerManager == null)
+            powerManager = FindFirstObjectByType<PowerManager>();
 
-        StringBuilder builder = new StringBuilder();
-
-        for (int i = 0; i < poweredObjects.Length; i++)
+        if (optionsText != null)
         {
-            if (poweredObjects[i] == null)
-                continue;
+            StringBuilder builder = new StringBuilder();
 
-            string state = poweredObjects[i].isPowered ? "ON" : "OFF";
+            for (int i = 0; i < poweredObjects.Length; i++)
+            {
+                if (poweredObjects[i] == null)
+                    continue;
 
-            builder.AppendLine(
-                (i + 1) + " - " +
-                poweredObjects[i].objectName +
-                " [" + state + "] Cost: " +
-                poweredObjects[i].powerCost
-            );
+                string state = poweredObjects[i].isPowered ? "ON" : "OFF";
+
+                builder.AppendLine(
+                    (i + 1) + " - " +
+                    poweredObjects[i].objectName +
+                    " [" + state + "] Cost: " +
+                    poweredObjects[i].powerCost
+                );
+            }
+
+            optionsText.text = builder.ToString();
         }
 
-        optionsText.text = builder.ToString();
+        if (powerUsageText != null && powerManager != null)
+        {
+            powerUsageText.text = "Power Usage: " + powerManager.usedPower + " / " + powerManager.maxPower;
+        }
     }
 
     private void ToggleObject(int index)

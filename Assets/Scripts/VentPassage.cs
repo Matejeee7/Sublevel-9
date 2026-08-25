@@ -16,11 +16,19 @@ public class VentPassage : MonoBehaviour
         if (!playerInRange || playerTransform == null)
             return;
 
+        if (InteractionPromptUI.InputCaptured)
+            return;
+
+        bool fanRunning = fanControl != null && !fanControl.isPowered;
+
+        InteractionPromptUI.Show(fanRunning ? "Fan still running" : "E - Enter Vent");
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (fanControl != null && !fanControl.isPowered)
+            if (fanRunning)
             {
                 Debug.Log("The ventilation fan is still running. Shut it down first.");
+                FeedbackUI.Flash("Ventilation fan still running.");
                 return;
             }
 
@@ -46,6 +54,9 @@ public class VentPassage : MonoBehaviour
         {
             playerInRange = false;
             playerTransform = null;
+
+            if (!InteractionPromptUI.InputCaptured)
+                InteractionPromptUI.Hide();
         }
     }
 }

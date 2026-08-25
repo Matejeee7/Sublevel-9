@@ -6,7 +6,15 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
+        if (currentInteractable == null)
+            return;
+
+        if (InteractionPromptUI.InputCaptured)
+            return;
+
+        InteractionPromptUI.Show(currentInteractable.interactionMessage);
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
             currentInteractable.Interact();
         }
@@ -19,7 +27,6 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            InteractionPromptUI.Show(interactable.interactionMessage);
         }
     }
 
@@ -30,7 +37,9 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable != null && interactable == currentInteractable)
         {
             currentInteractable = null;
-            InteractionPromptUI.Hide();
+
+            if (!InteractionPromptUI.InputCaptured)
+                InteractionPromptUI.Hide();
         }
     }
 }

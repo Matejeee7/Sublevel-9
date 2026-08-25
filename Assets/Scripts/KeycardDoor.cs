@@ -8,13 +8,13 @@ public class KeycardDoor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !unlocked)
+        if (collision.gameObject.CompareTag("Player") && !unlocked && !InteractionPromptUI.InputCaptured)
             InteractionPromptUI.Show("E - Unlock Door");
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !InteractionPromptUI.InputCaptured)
             InteractionPromptUI.Hide();
     }
 
@@ -22,6 +22,17 @@ public class KeycardDoor : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player"))
             return;
+
+        if (unlocked)
+            return;
+
+        // Re-asserted every physics step (not just on collision enter) so
+        // the prompt self-heals once a terminal/pause menu that opened
+        // while still in contact with the door closes again.
+        if (InteractionPromptUI.InputCaptured)
+            return;
+
+        InteractionPromptUI.Show("E - Unlock Door");
 
         if (Input.GetKeyDown(KeyCode.E))
         {

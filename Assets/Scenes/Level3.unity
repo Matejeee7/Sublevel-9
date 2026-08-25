@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -5014,6 +5014,7 @@ MonoBehaviour:
   - {fileID: 1648707065}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &519211513
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7379,7 +7380,7 @@ Transform:
   m_GameObject: {fileID: 826530922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -9, z: 0}
+  m_LocalPosition: {x: 29.1, y: -16.9, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7403,6 +7404,7 @@ MonoBehaviour:
   - {fileID: 124647342}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &826530925
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12407,7 +12409,7 @@ Transform:
   m_GameObject: {fileID: 1537749722}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 10, z: -10}
+  m_LocalPosition: {x: 0, y: -24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12919,6 +12921,7 @@ MonoBehaviour:
   - {fileID: 2018588533}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &1600624727
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15855,7 +15858,7 @@ Transform:
   m_GameObject: {fileID: 1939851575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 10, z: -10}
+  m_LocalPosition: {x: 0, y: -24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16057,7 +16060,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '1-3 Toggle Systems
 
-    ESC Close Terminal'
+    E to Close Terminal'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

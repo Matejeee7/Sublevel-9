@@ -4623,6 +4623,7 @@ MonoBehaviour:
   - {fileID: 880970925}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &592629112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8820,6 +8821,7 @@ MonoBehaviour:
   - {fileID: 44991306}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &1023768125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15679,6 +15681,7 @@ MonoBehaviour:
   - {fileID: 1429788535}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &1802345607
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17589,7 +17592,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '1-3 Toggle Systems
 
-    ESC Close Terminal'
+    E to Close Terminal'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17720,6 +17723,7 @@ MonoBehaviour:
   - {fileID: 1388108176}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!58 &2031608011
 CircleCollider2D:
   m_ObjectHideFlags: 0

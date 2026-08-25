@@ -10,21 +10,22 @@ public class HidingSpot : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            if (playerStealth == null)
-                return;
+        if (!playerInRange || playerStealth == null)
+            return;
 
+        if (InteractionPromptUI.InputCaptured)
+            return;
+
+        // Re-asserted every frame (not just on trigger enter) so the prompt
+        // self-heals as soon as a terminal/pause menu stops capturing input.
+        InteractionPromptUI.Show(playerStealth.isHidden ? "E - Exit Locker" : "E - Hide");
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             if (playerStealth.isHidden)
-            {
                 playerStealth.Unhide(exitPoint);
-                InteractionPromptUI.Show("E - Hide");
-            }
             else
-            {
                 playerStealth.Hide(hidePoint);
-                InteractionPromptUI.Show("E - Exit Locker");
-            }
         }
     }
 
@@ -34,8 +35,6 @@ public class HidingSpot : MonoBehaviour
         {
             playerInRange = true;
             playerStealth = other.GetComponent<PlayerStealth>();
-
-            InteractionPromptUI.Show("E - Hide");
         }
     }
 
@@ -45,7 +44,9 @@ public class HidingSpot : MonoBehaviour
         {
             playerInRange = false;
             playerStealth = null;
-            InteractionPromptUI.Hide();
+
+            if (!InteractionPromptUI.InputCaptured)
+                InteractionPromptUI.Hide();
         }
     }
 }

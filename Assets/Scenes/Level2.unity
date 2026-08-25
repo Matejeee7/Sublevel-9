@@ -604,8 +604,8 @@ Transform:
   m_GameObject: {fileID: 70785413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.3, z: 0}
-  m_LocalScale: {x: 0.3, y: 2.3, z: 1}
+  m_LocalPosition: {x: 0, y: -3.9, z: 0}
+  m_LocalScale: {x: 0.3, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1749489968}
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3873,7 +3873,7 @@ Transform:
   m_GameObject: {fileID: 597440845}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.2, z: 0}
+  m_LocalPosition: {x: 0, y: -5.9, z: 0}
   m_LocalScale: {x: 0.3, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4264,8 +4264,8 @@ Transform:
   m_GameObject: {fileID: 663481543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.2, z: 0}
-  m_LocalScale: {x: 0.3, y: 3.6, z: 1}
+  m_LocalPosition: {x: 0, y: -8.55, z: 0}
+  m_LocalScale: {x: 0.3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1749489968}
@@ -4783,6 +4783,7 @@ MonoBehaviour:
   - {fileID: 498627513}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!61 &753978492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7293,6 +7294,7 @@ MonoBehaviour:
   - {fileID: 915595934}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!61 &1167820037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11760,6 +11762,7 @@ MonoBehaviour:
   - {fileID: 770254320}
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
+  powerUsageText: {fileID: 2040199950}
 --- !u!61 &1968433696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12210,7 +12213,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '1-3 Toggle Systems
 
-    ESC Close Terminal'
+    E to Close Terminal'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

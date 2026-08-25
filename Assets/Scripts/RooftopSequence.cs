@@ -41,6 +41,26 @@ public class RooftopSequence : MonoBehaviour
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
 
+        // Reaching the helicopter is the win condition, but the walk/lift-off/
+        // fade takes several seconds during which the player can't move or
+        // hide. Without this, a still-chasing enemy could reach the player
+        // mid-sequence, call PlayerHealth.Die(), and load GameOverScene out
+        // from under the win sequence's own (delayed) scene load. Neutralize
+        // every enemy and the player's own collider the instant extraction
+        // begins so nothing can kill the player anymore.
+        Collider2D playerCollider = player.GetComponent<Collider2D>();
+        if (playerCollider != null)
+            playerCollider.enabled = false;
+
+        foreach (EnemyAI enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
+        {
+            enemy.enabled = false;
+
+            Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
+            if (enemyRb != null)
+                enemyRb.linearVelocity = Vector2.zero;
+        }
+
         while (Vector2.Distance(player.transform.position, helicopterEntryPoint.position) > 0.1f)
         {
             player.transform.position = Vector2.MoveTowards(
