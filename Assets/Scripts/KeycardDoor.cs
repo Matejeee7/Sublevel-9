@@ -64,7 +64,16 @@ public class KeycardDoor : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
 
         if (col != null)
+        {
             col.enabled = false;
+
+            // Without this, a player standing right up against the door
+            // (as in a tight double-door vault) can stay wedged against the
+            // stale contact for a physics step even though the collider is
+            // now disabled - the door looks open but still blocks. Forcing
+            // an immediate sync clears it the instant the door unlocks.
+            Physics2D.SyncTransforms();
+        }
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
 
