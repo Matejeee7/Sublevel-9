@@ -21,6 +21,15 @@ public class MultiPowerTerminal : Interactable
     private PlayerMovement playerMovement;
     private PowerManager powerManager;
 
+    // PlayerInteraction.Interact() (open) and this script's own Update()
+    // (close) both react to the same E keypress in the same frame, and
+    // Input.GetKeyDown stays true for the whole frame no matter how many
+    // scripts read it. Without this guard, whichever of the two runs
+    // second sees the state the first one just changed and immediately
+    // undoes it - the terminal opens then closes (or closes then reopens)
+    // within a single frame, which looks exactly like "E does nothing."
+    private int lastToggleFrame = -1;
+
     void Awake()
     {
         // Defensive reset: these statics must never leak a "terminal open"
@@ -33,6 +42,9 @@ public class MultiPowerTerminal : Interactable
 
     public override void Interact()
     {
+        if (Time.frameCount == lastToggleFrame)
+            return;
+
         OpenTerminal();
     }
 
@@ -41,7 +53,7 @@ public class MultiPowerTerminal : Interactable
         if (!isTerminalOpen)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Time.frameCount != lastToggleFrame && Input.GetKeyDown(KeyCode.E))
         {
             CloseTerminal();
             return;
@@ -59,6 +71,7 @@ public class MultiPowerTerminal : Interactable
 
     private void OpenTerminal()
     {
+        lastToggleFrame = Time.frameCount;
         isTerminalOpen = true;
         IsAnyTerminalOpen = true;
         openTerminal = this;
@@ -80,6 +93,7 @@ public class MultiPowerTerminal : Interactable
     // of flicking back on for a frame before Time.timeScale takes over.
     public void CloseTerminal(bool reenableMovement = true)
     {
+        lastToggleFrame = Time.frameCount;
         isTerminalOpen = false;
         IsAnyTerminalOpen = false;
         if (openTerminal == this)
