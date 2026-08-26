@@ -76,6 +76,14 @@ public class RooftopSequence : MonoBehaviour
 
         if (helicopter != null)
         {
+            // The idle hover/bob writes to this same transform every frame;
+            // left running, it would fight the liftoff movement below for
+            // control of helicopter.position (the same class of bug fixed
+            // in MultiPowerTerminal's E-interaction race).
+            HelicopterIdle idle = helicopter.GetComponent<HelicopterIdle>();
+            if (idle != null)
+                idle.enabled = false;
+
             Vector3 targetPos = helicopter.position + helicopterLiftOffset;
             while (Vector3.Distance(helicopter.position, targetPos) > 0.1f)
             {
