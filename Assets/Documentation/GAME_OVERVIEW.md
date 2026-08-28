@@ -40,17 +40,6 @@ Nine floors, each introducing (and then continuing to use) one additional
 system, escalate this loop from a simple locked door to a floor that combines
 every mechanic in the game at once.
 
-## Visual & Atmospheric Identity
-
-Every floor shares the same dark industrial-facility language (cyan/blue
-facility lighting, teal interactive tech, red alarms, amber power machinery,
-green "available"/success states) but each has its own `Global Light 2D`
-color/intensity and a handful of signature environmental props, so a
-screenshot is recognizable as a specific floor — see `LEVEL_DESIGN.md` for
-each floor's identity and `THIRD_PARTY_ASSETS.md` for what all of it is
-currently built from (one placeholder sprite, tinted and layered — no
-imported art yet).
-
 ## Progression
 
 ```
@@ -70,8 +59,7 @@ game — see `GameProgress.cs`.
 - **Settings** (from either menu): Master/Music/SFX volume, Fullscreen —
   persisted via PlayerPrefs, applied immediately.
 - **Game Over**: Retry (reloads the current level) or Main Menu.
-- **Win**: "ESCAPE SUCCESSFUL" / "You reached the surface.", shown after the
-  rooftop escape sequence completes.
+- **Win**: shown after the rooftop escape sequence completes.
 
 See `LEVEL_DESIGN.md` for what each floor introduces and `SYSTEMS.md` for how
 the underlying scripts work.

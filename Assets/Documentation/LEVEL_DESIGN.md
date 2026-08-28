@@ -63,26 +63,14 @@ Control (keycard-gated) and the elevator.
 
 ## Level6 — Reactor / Power Facility
 
-Theme: a central reactor core dominates a big chamber, with a walkway above
-and a maintenance alcove below — visually the most different floor plan yet,
-and (after its gameplay rebuild) the strongest single power-routing puzzle
-in the campaign. **New mechanic: unstable power** (`UnstableCircuit` — a
-`PoweredObject` that shuts itself off, with a red/yellow flicker warning, a
-fixed number of seconds after being powered; the walkway's window is a
-generous 24s, not a reflex-test).
-
-Route: Control Room A powers the reactor door → Reactor Chamber (one
-`Conductor` patrols the ring, one camera watches it) → either ride the
-24s walkway window up to the Generator Room, or duck into the Maintenance
-Alcove (always open) and power its fan to vent-shortcut there directly,
-bypassing the ring's camera/patrol entirely. The vent is bidirectional and
-untimed, so once discovered it's also the permanent way back down — no
-need to re-cross the walkway a second time. A Secondary Power Node in the
-Generator Room controls the chamber's optional lighting (`DarknessController`
-+ a `ReactorLightPower` sink), a real budget choice once other systems are
-already drawing power. `maxPower` is 4: the closing state (reactor door 1 +
-exit door 1 + elevator 2 = 4) leaves no room for anything left on from
-earlier, so finishing requires consciously reclaiming power.
+Theme: a central reactor core dominates a big chamber, with an optional
+walkway above and a dead-end maintenance alcove below — visually the most
+different floor plan yet. **New mechanic: unstable power**
+(`UnstableCircuit` — a `PoweredObject` that shuts itself off, with a
+red/yellow flicker warning, a fixed number of seconds after being powered).
+Applied only to the optional walkway leading to the generator branch; the
+mandatory route to the elevator has no timer at all, so the level can never
+become unwinnable from a missed window.
 
 ## Level7 — AI Core / Data Center
 
@@ -108,10 +96,7 @@ B, built from two ordinary `KeycardDoor`s in series (no new "needs two
 credentials" code was needed). A third `KeycardDoor`, keyed to Card A, gates a
 direct shortcut between the two wings' far ends — opens only once you've
 cleared the east wing, letting you skip re-crossing its laser and enemy to
-reach the west wing's card. A second, optional vent connects Restricted Lab
-Entry directly to a corner of Secure Archive next to Authorization Card B, a
-pure stealth bypass around both the lab's patrol and the archive's
-camera+patrol.
+reach the west wing's card.
 
 ## Level9 — Final Internal Floor
 
@@ -124,37 +109,14 @@ finale), dual keycard authorization, five patrolling enemies, two hiding
 spots, and a permanently dim `StealthWing`. The rooftop access door is itself
 an `UnstableCircuit` — power it and reach the exit within the window, a
 deliberate callback to Level6 for the finale's climactic beat. Objective:
-restore rooftop access; leads to `RooftopScene`. An optional vent connects
-Power Junction directly into the Laser Vault, letting a stealthy player skip
-the Surveillance Corridor's camera+patrol and the laser decision entirely.
+restore rooftop access; leads to `RooftopScene`.
 
 ## RooftopScene
 
 Theme: night, wind, a dim blue-tinted mood overlay. Deliberately the smallest
-map in the game, but built as a proper staged finale rather than a plain
-run: two rooms (a long Roof Run, then the Helicopter Pad), eight obstacles
-(AC units, vent stacks, a satellite dish, crate clusters) for cover and
-line-of-sight breaks without ever blocking the direct path to the
-helicopter, and four enemies. `TheConductor_Final` is active immediately
-(a map-spanning detection range, "already behind you" from the first
-beat); three more (`RoofA`/`RoofB`/`HeliPad`) sit further along the route
-with realistic detection ranges (10, not the original's 60) and engage
-progressively through ordinary distance+line-of-sight as the player
-advances, rather than a scripted spawner — no enemy starts in front of the
-player. Two `ScriptedExplosion` zones (particle burst + drifting smoke,
-offset from the walking line) add cinematic pressure at two points along
-the run; two ambient spark emitters and three pulsing emergency lights add
-atmosphere. Two hiding spots remain as an escape valve. No power system on
-this floor — it's a pure chase-and-escape beat.
-
-Reaching the helicopter's `EscapeTrigger` fires `RooftopSequence` (only
-once - guarded, no duplicate trigger/coroutine risk): every `EnemyAI` and
-the player's own collider are disabled the instant extraction starts (so
-nothing can kill the player mid-sequence and race the win), the player
-walks to the helicopter, its `HelicopterIdle` hover/bob is disabled so the
-liftoff movement doesn't fight it for control of the transform, it lifts
-off, the screen fades to black, `WinScene` loads. The helicopter itself is
-a modular `Body`/`TailBoom`/`MainRotor`/`TailRotor` composition (a spinning
-rotor bar over a simple fuselage) rather than the original flat placeholder
-square — gameplay logic (`RooftopSequence`) stays independent of it, so the
-visual can be swapped for real art without touching a script.
+map in the game — a straight run past a few AC-unit obstacles to a waiting
+helicopter, with one enemy that's effectively always chasing (a very large
+detection range, not new AI logic) and two hiding spots as an escape valve.
+Reaching the helicopter triggers `RooftopSequence`: player walks to the
+helicopter, it lifts off, the screen fades to black, `WinScene` loads. No
+power system on this floor — it's a pure chase-and-escape beat.
