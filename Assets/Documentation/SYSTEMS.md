@@ -30,10 +30,14 @@ and how they connect — read the source for exact field names.
   why duplicate `PowerManager`s in a scene are a real bug (fixed in Level1/2;
   the QA validator now catches this class of issue automatically).
 - **PoweredObject** — `isPowered`, `powerCost`, `TogglePower()`. By default a
-  door: disables its own collider (passable) and tints cyan when powered.
-  Also used as an invisible "virtual power sink" (no collider/sprite) for
-  things like an elevator lift or a laser's power source — see
-  `PowerLightMask`/`DarknessController` below for other things it can drive.
+  door: disables its own collider (passable) and tints `poweredColor`/
+  `unpoweredColor` when toggled (fields, defaulting to the original
+  hardcoded cyan/gray — every level now sets a level-specific `poweredColor`
+  on its visible doors for per-floor identity, while every level shares the
+  same neutral gray for "off"). Also used as an invisible "virtual power
+  sink" (no collider/sprite) for things like an elevator lift or a laser's
+  power source — see `PowerLightMask`/`DarknessController` below for other
+  things it can drive.
 - **PowerTerminal** / **MultiPowerTerminal** — `Interactable`s that toggle one
   or several `PoweredObject`s. `MultiPowerTerminal` opens a shared UI panel
   (one `TerminalPanel` per scene, referenced by every terminal instance),
@@ -145,6 +149,62 @@ and how they connect — read the source for exact field names.
   auto-hidden after a couple of seconds. Deliberately a separate UI element
   from both `InteractionPromptUI` and `ObjectiveManager` so the three never
   overwrite each other.
-- **RooftopSequence** — the escape cutscene: a plain coroutine (not Timeline)
-  that walks the player to the helicopter, lifts it off, fades to black via a
-  `CanvasGroup`, and loads `WinScene`.
+- **RooftopSequence** — the escape cutscene: a plain coroutine (not Timeline),
+  guarded to run at most once, that neutralizes every `EnemyAI` and the
+  player's own collider the instant it starts (so nothing can kill the
+  player mid-sequence and race the win), disables the helicopter's
+  `HelicopterIdle` bob before taking over its position, walks the player to
+  the helicopter, lifts it off, fades to black via a `CanvasGroup`, and
+  loads `WinScene`.
+
+## Visuals
+
+- **Visual composition pattern** — every gameplay object's collider/script
+  stays on the original GameObject; anything decorative lives on a child
+  (usually named `Visual`) with its own `SpriteRenderer`(s), built from the
+  single placeholder sprite `Assets/Art/Square.png` tinted and layered.
+  Nothing decorative ever touches a parent's `transform.localScale` (that
+  scales the collider too) — see `PlayerStealth`/`RooftopSequence` below for
+  why hiding logic had to change to match.
+- **DirectionalFacing** — rotates a visual child to face the last direction
+  of travel, purely by watching a body transform's position each frame (no
+  changes needed to `PlayerMovement`/`EnemyAI`). Used by both the player and
+  every enemy's `Visual` child.
+- **CameraDisabledIndicator** — purely observational: watches whether the
+  parent `SecurityCamera` component is still `enabled` (false once
+  `DisableCamera()` fires) and dims the camera's body/lens sprites to match,
+  without touching detection logic at all.
+- **RotorSpin** / **HelicopterIdle** — continuous rotation for a rotor
+  sprite, and a gentle hover/bob for the helicopter while it waits.
+  `RooftopSequence` explicitly disables `HelicopterIdle` before its own
+  liftoff loop starts writing to the same transform each frame — otherwise
+  the two would fight for `helicopter.position`, the exact class of
+  same-frame race that also affected `MultiPowerTerminal`'s E-interaction.
+- **PulsingLight** — a simple alpha sine-pulse for a `SpriteRenderer`, reused
+  for terminal screens, generator indicator lights, specimen tanks, server
+  rack status lights, and Rooftop's emergency lights.
+- **ScriptedExplosion** — a one-shot trigger zone (Rooftop only) that plays
+  a paired burst + smoke `ParticleSystem` once when the player crosses it.
+  Never damages the player — pure cinematic pressure.
+- **PlayerStealth**/**RooftopSequence** player-hide note — both used to call
+  `GetComponent<SpriteRenderer>()` directly on the player root; now
+  `GetComponentsInChildren<SpriteRenderer>(true)`, so hiding/the helicopter-
+  entry walk still fully hides the player now that its visual lives on a
+  child `Visual` object instead of the root.
+
+## Audio
+
+- **SfxPlayer** — one shared instance per scene (the `InteractionPromptUI`/
+  `FeedbackUI` "static access" pattern), a single `AudioSource` for one-shot
+  playback. `SfxPlayer.Play(clip)` scales by `GameSettings.SfxVolume` and is
+  a safe no-op if `clip` is null — which it is everywhere right now; no audio
+  assets exist yet (see `THIRD_PARTY_ASSETS.md`). Every category the task
+  scope covers has an `AudioClip` field wired at its trigger point (door
+  power, terminal open/close, keycard pickup, alarm, camera detection, enemy
+  alert, vent entry, pressure plate, generator, a generic feedback/objective
+  cue via `FeedbackUI.Flash`, and Rooftop's explosions) - dropping a clip
+  into any of them in the Inspector makes it play, nothing else to change.
+- **AmbiencePlayer** — one looping music/ambience bed per scene (also one
+  per gameplay scene already), continuously re-scaled by
+  `GameSettings.MusicVolume` so a live settings change takes effect
+  immediately. No clip assigned yet on any instance.
