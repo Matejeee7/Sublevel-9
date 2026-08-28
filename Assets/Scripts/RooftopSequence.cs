@@ -70,8 +70,9 @@ public class RooftopSequence : MonoBehaviour
             yield return null;
         }
 
-        SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
-        if (playerSprite != null)
+        // Includes children in case the player's visual lives on a child
+        // "Visual" object rather than directly on the root.
+        foreach (SpriteRenderer playerSprite in player.GetComponentsInChildren<SpriteRenderer>(true))
             playerSprite.enabled = false;
 
         if (helicopter != null)

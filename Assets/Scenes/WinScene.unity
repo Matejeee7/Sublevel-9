@@ -653,7 +653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Helicopter extraction sequence will be added in the final pass.
+  m_Text: You reached the surface.
 --- !u!222 &1291733159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ROOF ACCESS REACHED
+  m_Text: ESCAPE SUCCESSFUL
 --- !u!222 &1543041024
 CanvasRenderer:
   m_ObjectHideFlags: 0
