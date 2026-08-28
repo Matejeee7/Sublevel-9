@@ -6,8 +6,6 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public GameObject doorToUnlock;
-    public AudioClip activateClip;
-    public AudioClip releaseClip;
 
     private int weightCount = 0;
     private bool wasActive = false;
@@ -61,7 +59,6 @@ public class PressurePlate : MonoBehaviour
         if (active != wasActive)
         {
             FeedbackUI.Flash(active ? "Pressure plate activated." : "Pressure plate released.");
-            SfxPlayer.Play(active ? activateClip : releaseClip);
             wasActive = active;
         }
     }

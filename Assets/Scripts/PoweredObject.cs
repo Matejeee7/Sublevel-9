@@ -20,10 +20,6 @@ public class PoweredObject : MonoBehaviour
     public Color poweredColor = Color.cyan;
     public Color unpoweredColor = Color.gray;
 
-    [Header("Audio (optional)")]
-    public AudioClip powerOnClip;
-    public AudioClip powerOffClip;
-
     private PowerManager powerManager;
     private SpriteRenderer spriteRenderer;
     private Collider2D objectCollider;
@@ -45,7 +41,6 @@ public class PoweredObject : MonoBehaviour
             {
                 isPowered = true;
                 powerManager.AddPowerUsage(powerCost);
-                SfxPlayer.Play(powerOnClip);
             }
             else
             {
@@ -57,7 +52,6 @@ public class PoweredObject : MonoBehaviour
         {
             isPowered = false;
             powerManager.RemovePowerUsage(powerCost);
-            SfxPlayer.Play(powerOffClip);
         }
 
         UpdateState();

@@ -8,7 +8,6 @@ public class ScriptedExplosion : MonoBehaviour
 {
     public ParticleSystem explosionParticles;
     public ParticleSystem smokeParticles;
-    public AudioClip explosionClip;
 
     private bool triggered = false;
 
@@ -24,7 +23,5 @@ public class ScriptedExplosion : MonoBehaviour
 
         if (smokeParticles != null)
             smokeParticles.Play();
-
-        SfxPlayer.Play(explosionClip);
     }
 }

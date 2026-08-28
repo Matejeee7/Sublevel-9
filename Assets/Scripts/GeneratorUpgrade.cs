@@ -4,7 +4,6 @@ public class GeneratorUpgrade : Interactable
 {
     public int newMaxPower = 3;
     public string nextObjective = "";
-    public AudioClip activateClip;
     private bool activated = false;
 
     public override void Interact()
@@ -33,6 +32,5 @@ public class GeneratorUpgrade : Interactable
         Debug.Log("Generator activated. Max power: " + newMaxPower);
         FeedbackUI.Flash("Generator activated. Max power: " + newMaxPower);
         ObjectiveManager.SetObjective(nextObjective);
-        SfxPlayer.Play(activateClip);
     }
 }

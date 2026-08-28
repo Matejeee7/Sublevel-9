@@ -13,10 +13,6 @@ public class AlarmController : MonoBehaviour
     [Header("Objective feedback (optional)")]
     public string alertObjective = "Reset the alarm at a security console.";
 
-    [Header("Audio (optional)")]
-    public AudioClip alertClip;
-    public AudioClip resetClip;
-
     private float stateTimer;
     private EnemyAI[] enemies;
 
@@ -65,7 +61,6 @@ public class AlarmController : MonoBehaviour
         {
             FeedbackUI.Flash("ALERT - security responding!");
             ObjectiveManager.SetObjective(alertObjective);
-            SfxPlayer.Play(alertClip);
         }
 
         foreach (EnemyAI enemy in enemies)
@@ -80,7 +75,6 @@ public class AlarmController : MonoBehaviour
     public void ResetAlarm()
     {
         SetState(AlarmState.Normal);
-        SfxPlayer.Play(resetClip);
     }
 
     private void SetState(AlarmState newState)

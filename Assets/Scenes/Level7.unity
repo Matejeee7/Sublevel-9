@@ -3311,52 +3311,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333227728}
   m_CullTransparentMesh: 1
---- !u!1 &337881327
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 337881329}
-  - component: {fileID: 337881328}
-  m_Layer: 0
-  m_Name: AmbiencePlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &337881328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337881327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2604bec80710abd478615d07b6b5c424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambienceClip: {fileID: 0}
-  baseVolume: 0.5
---- !u!4 &337881329
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337881327}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340738605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,7 +4415,6 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
-  alertClip: {fileID: 0}
 --- !u!58 &493243478
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5724,7 +5677,6 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
-  alertClip: {fileID: 0}
 --- !u!58 &656047622
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7058,8 +7010,6 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
-  openClip: {fileID: 0}
-  closeClip: {fileID: 0}
 --- !u!58 &769907308
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8693,8 +8643,6 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
-  openClip: {fileID: 0}
-  closeClip: {fileID: 0}
 --- !u!58 &929020782
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9800,8 +9748,6 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.25, g: 0.55, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
-  powerOnClip: {fileID: 0}
-  powerOffClip: {fileID: 0}
 --- !u!61 &1012978601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11316,7 +11262,6 @@ MonoBehaviour:
   viewDistance: 8
   viewAngle: 55
   detectionTime: 0.25
-  detectionClip: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 72
@@ -12101,8 +12046,6 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0, g: 1, b: 1, a: 1}
   unpoweredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  powerOnClip: {fileID: 0}
-  powerOffClip: {fileID: 0}
 --- !u!1 &1295253026
 GameObject:
   m_ObjectHideFlags: 0
@@ -13321,8 +13264,6 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
-  openClip: {fileID: 0}
-  closeClip: {fileID: 0}
 --- !u!58 &1425179684
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14116,50 +14057,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516319501}
   m_CullTransparentMesh: 1
---- !u!1 &1523710201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1523710203}
-  - component: {fileID: 1523710202}
-  m_Layer: 0
-  m_Name: SfxPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1523710202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523710201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 025c59b838a32164882ddc7731b2d6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1523710203
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523710201}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535757393
 GameObject:
   m_ObjectHideFlags: 0
@@ -14454,8 +14351,6 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0, g: 1, b: 1, a: 1}
   unpoweredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  powerOnClip: {fileID: 0}
-  powerOffClip: {fileID: 0}
 --- !u!4 &1544819088
 Transform:
   m_ObjectHideFlags: 0
@@ -15543,7 +15438,6 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
-  alertClip: {fileID: 0}
 --- !u!58 &1702060182
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15658,7 +15552,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 941083635}
   displayDuration: 1.6
-  cueClip: {fileID: 0}
 --- !u!1 &1706186994
 GameObject:
   m_ObjectHideFlags: 0
@@ -17374,8 +17267,6 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.25, g: 0.55, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
-  powerOnClip: {fileID: 0}
-  powerOffClip: {fileID: 0}
 --- !u!61 &1974201136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18081,7 +17972,6 @@ MonoBehaviour:
   interactionMessage: E - Activate Backup Generator
   newMaxPower: 6
   nextObjective: Continue toward the elevator.
-  activateClip: {fileID: 0}
 --- !u!58 &2069038002
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18434,5 +18324,3 @@ SceneRoots:
   - {fileID: 559295910}
   - {fileID: 49419398}
   - {fileID: 494566381}
-  - {fileID: 1523710203}
-  - {fileID: 337881329}

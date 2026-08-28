@@ -11,10 +11,6 @@ public class MultiPowerTerminal : Interactable
     public TMP_Text optionsText;
     public TMP_Text powerUsageText;
 
-    [Header("Audio (optional)")]
-    public AudioClip openClip;
-    public AudioClip closeClip;
-
     // Global ownership so the pause menu and the interaction prompt can
     // always ask "is a terminal currently capturing input" without holding
     // a reference to a specific instance.
@@ -88,7 +84,6 @@ public class MultiPowerTerminal : Interactable
             terminalPanel.SetActive(true);
 
         InteractionPromptUI.Hide();
-        SfxPlayer.Play(openClip);
 
         RefreshUI();
     }
@@ -109,8 +104,6 @@ public class MultiPowerTerminal : Interactable
 
         if (terminalPanel != null)
             terminalPanel.SetActive(false);
-
-        SfxPlayer.Play(closeClip);
     }
 
     public static void CloseAnyOpenTerminal(bool reenableMovement = true)
