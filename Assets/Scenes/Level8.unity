@@ -253,6 +253,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &24981022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24981024}
+  - component: {fileID: 24981023}
+  m_Layer: 0
+  m_Name: AmbiencePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &24981023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24981022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2604bec80710abd478615d07b6b5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambienceClip: {fileID: 0}
+  baseVolume: 0.5
+--- !u!4 &24981024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24981022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44523872
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +382,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0, g: 1, b: 1, a: 1}
   unpoweredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!1 &47721156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2065,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &213952387
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5235,6 +5284,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!58 &592629112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8500,6 +8551,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0, g: 1, b: 1, a: 1}
   unpoweredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!4 &880970926
 Transform:
   m_ObjectHideFlags: 0
@@ -8652,6 +8705,7 @@ MonoBehaviour:
   interactionMessage: E - Activate Backup Generator
   newMaxPower: 6
   nextObjective: Continue exploring.
+  activateClip: {fileID: 0}
 --- !u!58 &884304821
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9003,6 +9057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkedExit: {fileID: 1108816537}
   fanControl: {fileID: 965146795}
+  enterClip: {fileID: 0}
 --- !u!61 &907634286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9963,6 +10018,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0, g: 1, b: 1, a: 1}
   unpoweredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!1 &982084891
 GameObject:
   m_ObjectHideFlags: 0
@@ -10236,6 +10293,7 @@ MonoBehaviour:
   viewDistance: 8
   viewAngle: 55
   detectionTime: 0.25
+  detectionClip: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 72
@@ -10313,6 +10371,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!58 &1023768125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11074,6 +11134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkedExit: {fileID: 907634284}
   fanControl: {fileID: 965146795}
+  enterClip: {fileID: 0}
 --- !u!61 &1108816539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11614,6 +11675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keycardId: AuthCardB
   nextObjective: Authorization B acquired. Reach the vault and the elevator.
+  pickupClip: {fileID: 0}
 --- !u!58 &1161526854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12450,6 +12512,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.5, g: 0.7, b: 0.85, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &1236979135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13023,6 +13087,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &1299818649
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14071,6 +14136,8 @@ MonoBehaviour:
   suspiciousDecayTime: 8
   alertDecayTime: 15
   alertObjective: Break line of sight and wait for the alert to fade.
+  alertClip: {fileID: 0}
+  resetClip: {fileID: 0}
 --- !u!1 &1388108174
 GameObject:
   m_ObjectHideFlags: 0
@@ -14125,6 +14192,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.5, g: 0.7, b: 0.85, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &1388108177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14454,6 +14523,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.5, g: 0.7, b: 0.85, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &1429788536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16452,6 +16523,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!58 &1653250801
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17379,6 +17452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 941083635}
   displayDuration: 1.6
+  cueClip: {fileID: 0}
 --- !u!1 &1706186994
 GameObject:
   m_ObjectHideFlags: 0
@@ -17603,6 +17677,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1737211456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737211458}
+  - component: {fileID: 1737211457}
+  m_Layer: 0
+  m_Name: SfxPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737211457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737211456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025c59b838a32164882ddc7731b2d6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1737211458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737211456}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755824689
 GameObject:
   m_ObjectHideFlags: 0
@@ -18417,6 +18535,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!58 &1802345607
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19824,6 +19944,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &1953266461
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20285,6 +20406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keycardId: AuthCardA
   nextObjective: Authorization A acquired. Find Authorization B.
+  pickupClip: {fileID: 0}
 --- !u!58 &2003057488
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20544,6 +20666,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!58 &2031608011
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21643,3 +21767,5 @@ SceneRoots:
   - {fileID: 524631032}
   - {fileID: 226890778}
   - {fileID: 494566381}
+  - {fileID: 1737211458}
+  - {fileID: 24981024}

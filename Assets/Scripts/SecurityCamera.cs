@@ -14,6 +14,9 @@ public class SecurityCamera : MonoBehaviour
 
     public float detectionTime = 0.25f;
 
+    [Header("Audio (optional)")]
+    public AudioClip detectionClip;
+
     [Header("Line Of Sight")]
     public LayerMask obstacleMask;
 
@@ -185,6 +188,8 @@ public class SecurityCamera : MonoBehaviour
         Debug.Log(
             "SECURITY CAMERA DETECTED PLAYER! Alerting nearby security."
         );
+
+        SfxPlayer.Play(detectionClip);
 
         AlarmController alarmController =
             FindFirstObjectByType<AlarmController>();

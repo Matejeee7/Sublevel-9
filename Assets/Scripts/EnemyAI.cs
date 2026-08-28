@@ -25,6 +25,9 @@ public class EnemyAI : MonoBehaviour
     public float investigateWaitTime = 2f;
     public float searchTime = 3f;
 
+    [Header("Audio (optional)")]
+    public AudioClip alertClip;
+
     private Rigidbody2D rb;
     private State state = State.Patrol;
 
@@ -129,6 +132,7 @@ public class EnemyAI : MonoBehaviour
         state = State.Investigate;
         alertTarget = position;
         alertStateTimer = 0f;
+        SfxPlayer.Play(alertClip);
     }
 
     void Chase()

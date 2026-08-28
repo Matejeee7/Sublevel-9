@@ -9,11 +9,28 @@ public class HelicopterIdle : MonoBehaviour
     public float bobAmplitude = 0.15f;
     public float bobSpeed = 1.5f;
 
+    [Header("Audio (optional)")]
+    public AudioClip rotorLoopClip;
+
+    [Range(0f, 1f)]
+    public float rotorVolume = 0.5f;
+
     private Vector3 basePosition;
+    private AudioSource rotorSource;
 
     void Awake()
     {
         basePosition = transform.localPosition;
+
+        if (rotorLoopClip != null)
+        {
+            rotorSource = gameObject.AddComponent<AudioSource>();
+            rotorSource.clip = rotorLoopClip;
+            rotorSource.loop = true;
+            rotorSource.playOnAwake = false;
+            rotorSource.spatialBlend = 0f;
+            rotorSource.Play();
+        }
     }
 
     void Update()
@@ -21,5 +38,8 @@ public class HelicopterIdle : MonoBehaviour
         Vector3 p = basePosition;
         p.y += Mathf.Sin(Time.time * bobSpeed) * bobAmplitude;
         transform.localPosition = p;
+
+        if (rotorSource != null)
+            rotorSource.volume = rotorVolume * GameSettings.SfxVolume;
     }
 }

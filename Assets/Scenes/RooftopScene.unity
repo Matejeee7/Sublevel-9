@@ -15883,6 +15883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticles: {fileID: 1343071}
   smokeParticles: {fileID: 1241214014}
+  explosionClip: {fileID: 0}
 --- !u!61 &161980463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16008,6 +16009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticles: {fileID: 1536836617}
   smokeParticles: {fileID: 25757176}
+  explosionClip: {fileID: 0}
 --- !u!61 &207241022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16463,6 +16465,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288267725}
   m_CullTransparentMesh: 1
+--- !u!1 &337893324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337893326}
+  - component: {fileID: 337893325}
+  m_Layer: 0
+  m_Name: SfxPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &337893325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337893324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025c59b838a32164882ddc7731b2d6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &337893326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337893324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &344929210
 GameObject:
   m_ObjectHideFlags: 0
@@ -17392,6 +17438,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &429141310
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18579,6 +18626,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &734533602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734533604}
+  - component: {fileID: 734533603}
+  m_Layer: 0
+  m_Name: AmbiencePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &734533603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734533602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2604bec80710abd478615d07b6b5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambienceClip: {fileID: 0}
+  baseVolume: 0.5
+--- !u!4 &734533604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734533602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742817493
 GameObject:
   m_ObjectHideFlags: 0
@@ -20461,6 +20554,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &961723535
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20575,6 +20669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobAmplitude: 0.15
   bobSpeed: 1.5
+  rotorLoopClip: {fileID: 0}
+  rotorVolume: 0.5
 --- !u!1 &1046096140
 GameObject:
   m_ObjectHideFlags: 0
@@ -27250,6 +27346,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &1361843338
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33780,6 +33877,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &1685784563
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34302,6 +34400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 1405473299}
   displayDuration: 1.6
+  cueClip: {fileID: 0}
 --- !u!1 &1718160981
 GameObject:
   m_ObjectHideFlags: 0
@@ -41330,3 +41429,5 @@ SceneRoots:
   - {fileID: 1305664501}
   - {fileID: 2097750261}
   - {fileID: 1325139379}
+  - {fileID: 337893326}
+  - {fileID: 734533604}

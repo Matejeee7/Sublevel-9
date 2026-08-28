@@ -7,6 +7,7 @@ public class VentPassage : MonoBehaviour
 {
     public Transform linkedExit;
     public PoweredObject fanControl;
+    public AudioClip enterClip;
 
     private bool playerInRange = false;
     private Transform playerTransform;
@@ -35,6 +36,7 @@ public class VentPassage : MonoBehaviour
             if (linkedExit != null)
             {
                 playerTransform.position = linkedExit.position;
+                SfxPlayer.Play(enterClip);
             }
         }
     }

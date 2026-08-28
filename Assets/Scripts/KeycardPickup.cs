@@ -4,6 +4,7 @@ public class KeycardPickup : MonoBehaviour
 {
     public string keycardId = "Level1Keycard";
     public string nextObjective = "";
+    public AudioClip pickupClip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +22,7 @@ public class KeycardPickup : MonoBehaviour
         Debug.Log(keycardId + " acquired");
         FeedbackUI.Flash(keycardId + " acquired");
         ObjectiveManager.SetObjective(nextObjective);
+        SfxPlayer.Play(pickupClip);
 
         Destroy(gameObject);
     }

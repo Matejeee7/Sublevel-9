@@ -3384,6 +3384,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!114 &498627514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3554,6 +3556,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &504800597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4579,6 +4583,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &597440848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5249,6 +5255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keycardId: ResearchAccessCard
   nextObjective: Reach the elevator.
+  pickupClip: {fileID: 0}
 --- !u!1 &712090490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,6 +5419,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!61 &753978492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5622,6 +5631,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &770254321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6334,6 +6345,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &915595935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6473,6 +6486,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!212 &928662947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6726,6 +6741,7 @@ MonoBehaviour:
   interactionMessage: Press E to interact
   newMaxPower: 5
   nextObjective: Disable the security cameras.
+  activateClip: {fileID: 0}
 --- !u!1 &957087567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7150,6 +7166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 334358104}
   displayDuration: 1.6
+  cueClip: {fileID: 0}
 --- !u!1 &1049822885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,6 +7893,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!61 &1167820037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9020,6 +9039,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!212 &1372453575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10836,6 +10857,7 @@ MonoBehaviour:
   patrolWaitTime: 1
   investigateWaitTime: 2
   searchTime: 3
+  alertClip: {fileID: 0}
 --- !u!58 &1576947527
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12039,6 +12061,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1809222527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809222529}
+  - component: {fileID: 1809222528}
+  m_Layer: 0
+  m_Name: AmbiencePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1809222528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809222527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2604bec80710abd478615d07b6b5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambienceClip: {fileID: 0}
+  baseVolume: 0.5
+--- !u!4 &1809222529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809222527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814958915
 GameObject:
   m_ObjectHideFlags: 0
@@ -12232,6 +12300,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1840796463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840796465}
+  - component: {fileID: 1840796464}
+  m_Layer: 0
+  m_Name: SfxPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1840796464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840796463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025c59b838a32164882ddc7731b2d6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1840796465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840796463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844612224
 GameObject:
   m_ObjectHideFlags: 0
@@ -13552,6 +13664,8 @@ MonoBehaviour:
   terminalPanel: {fileID: 1567824654}
   optionsText: {fileID: 1913837936}
   powerUsageText: {fileID: 2040199950}
+  openClip: {fileID: 0}
+  closeClip: {fileID: 0}
 --- !u!61 &1968433696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13707,6 +13821,8 @@ MonoBehaviour:
   showOnlyWhenPowered: 0
   poweredColor: {r: 0.3, g: 0.9, b: 0.95, a: 1}
   unpoweredColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  powerOnClip: {fileID: 0}
+  powerOffClip: {fileID: 0}
 --- !u!61 &1968814632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15639,6 +15755,7 @@ MonoBehaviour:
   viewDistance: 7
   viewAngle: 50
   detectionTime: 0.25
+  detectionClip: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 72
@@ -15715,6 +15832,7 @@ MonoBehaviour:
   viewDistance: 7
   viewAngle: 50
   detectionTime: 0.25
+  detectionClip: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 72
@@ -15791,6 +15909,7 @@ MonoBehaviour:
   viewDistance: 7
   viewAngle: 50
   detectionTime: 0.25
+  detectionClip: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 72
@@ -15864,3 +15983,5 @@ SceneRoots:
   - {fileID: 1323586731}
   - {fileID: 3000001301}
   - {fileID: 1222682648}
+  - {fileID: 1840796465}
+  - {fileID: 1809222529}

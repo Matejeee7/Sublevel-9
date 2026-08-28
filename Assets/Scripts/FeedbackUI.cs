@@ -12,6 +12,7 @@ public class FeedbackUI : MonoBehaviour
 
     public TMP_Text feedbackText;
     public float displayDuration = 1.6f;
+    public AudioClip cueClip;
 
     private Coroutine hideRoutine;
 
@@ -44,6 +45,7 @@ public class FeedbackUI : MonoBehaviour
 
         feedbackText.text = message;
         feedbackText.gameObject.SetActive(true);
+        SfxPlayer.Play(cueClip);
 
         if (hideRoutine != null)
             StopCoroutine(hideRoutine);
