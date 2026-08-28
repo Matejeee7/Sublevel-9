@@ -5,17 +5,13 @@ public class PlayerStealth : MonoBehaviour
     public bool isHidden = false;
 
     private PlayerMovement movement;
-    private SpriteRenderer[] spriteRenderers;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
     void Start()
     {
         movement = GetComponent<PlayerMovement>();
-        // Includes children so a visual built as a "Visual" child object
-        // (multiple sprites: body, facing accent, ...) still fully
-        // disappears while hidden, not just whichever renderer happens to
-        // live directly on this GameObject.
-        spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -28,7 +24,8 @@ public class PlayerStealth : MonoBehaviour
         if (movement != null)
             movement.enabled = false;
 
-        SetSpritesEnabled(false);
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = false;
 
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
@@ -45,20 +42,9 @@ public class PlayerStealth : MonoBehaviour
         if (movement != null)
             movement.enabled = true;
 
-        SetSpritesEnabled(true);
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
 
         Debug.Log("Player exited locker");
-    }
-
-    private void SetSpritesEnabled(bool value)
-    {
-        if (spriteRenderers == null)
-            return;
-
-        foreach (SpriteRenderer sr in spriteRenderers)
-        {
-            if (sr != null)
-                sr.enabled = value;
-        }
     }
 }

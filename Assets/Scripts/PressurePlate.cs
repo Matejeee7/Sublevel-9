@@ -35,18 +35,10 @@ public class PressurePlate : MonoBehaviour
 
     private void UpdateDoor()
     {
-        bool active = weightCount > 0;
-
-        // The plate's own sprite (if any) reflects its state too, not just
-        // the door it's holding open.
-        SpriteRenderer ownSprite = GetComponent<SpriteRenderer>();
-        if (ownSprite != null)
-            ownSprite.color = active
-                ? new Color(0.3f, 0.9f, 0.6f)
-                : new Color(0.35f, 0.35f, 0.38f);
-
         if (doorToUnlock == null)
             return;
+
+        bool active = weightCount > 0;
 
         Collider2D col = doorToUnlock.GetComponent<Collider2D>();
         if (col != null)

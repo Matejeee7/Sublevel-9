@@ -13,13 +13,6 @@ public class PoweredObject : MonoBehaviour
     [Header("Visual Behavior")]
     public bool showOnlyWhenPowered = false;
 
-    // Lets different door "families" (reactor door, executive door, ...)
-    // read as visually distinct without changing the on/off logic itself -
-    // defaults match the original hardcoded cyan/gray exactly, so any
-    // instance that doesn't set these looks exactly as before.
-    public Color poweredColor = Color.cyan;
-    public Color unpoweredColor = Color.gray;
-
     private PowerManager powerManager;
     private SpriteRenderer spriteRenderer;
     private Collider2D objectCollider;
@@ -61,7 +54,7 @@ public class PoweredObject : MonoBehaviour
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = isPowered ? poweredColor : unpoweredColor;
+            spriteRenderer.color = isPowered ? Color.cyan : Color.gray;
 
             if (hideWhenPowered && isPowered)
             {
