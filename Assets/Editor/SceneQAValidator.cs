@@ -150,11 +150,21 @@ public static class SceneQAValidator
             Check("PlayerWeapon exists", weapon != null);
             if (weapon != null)
             {
+                Check("PlayerWeapon.weaponPivot assigned", weapon.weaponPivot != null);
                 Check("PlayerWeapon.weaponVisual assigned", weapon.weaponVisual != null);
                 Check("PlayerWeapon.weaponVisual starts inactive (cannot shoot before pickup)",
                     weapon.weaponVisual == null || !weapon.weaponVisual.gameObject.activeSelf);
-                Check("PlayerWeapon.muzzle assigned", weapon.muzzle != null);
+                Check("PlayerWeapon.muzzle (MuzzlePoint) assigned", weapon.muzzle != null);
+                Check("PlayerWeapon.maxRange > 0", weapon.maxRange > 0f);
             }
+
+            CombatCrosshair crosshair = Object.FindFirstObjectByType<CombatCrosshair>(FindObjectsInactive.Include);
+            Check("CombatCrosshair exists", crosshair != null);
+            if (crosshair != null)
+                Check("CombatCrosshair.crosshairImage assigned", crosshair.crosshairImage != null);
+
+            RooftopSequence extraction = Object.FindFirstObjectByType<RooftopSequence>();
+            Check("Helicopter extraction (RooftopSequence) still exists", extraction != null);
 
             WeaponPickup[] pickups = Object.FindObjectsByType<WeaponPickup>(FindObjectsSortMode.None);
             Check("Exactly one WeaponPickup exists", pickups.Length == 1);
