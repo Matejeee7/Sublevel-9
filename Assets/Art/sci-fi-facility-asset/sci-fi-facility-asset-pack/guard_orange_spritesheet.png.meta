@@ -1,0 +1,894 @@
+fileFormatVersion: 2
+guid: e13064e6cddc73d49b5d13ecff486f62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -276904933882127586
+    second: guard_orange_spritesheet_0
+  - first:
+      213: 7825513309599640584
+    second: guard_orange_spritesheet_1
+  - first:
+      213: -1076612010942686475
+    second: guard_orange_spritesheet_2
+  - first:
+      213: 9114821649008139509
+    second: guard_orange_spritesheet_3
+  - first:
+      213: 704573368608511503
+    second: guard_orange_spritesheet_4
+  - first:
+      213: -5193014300742317847
+    second: guard_orange_spritesheet_5
+  - first:
+      213: -8428916193952894358
+    second: guard_orange_spritesheet_6
+  - first:
+      213: -544058933674496050
+    second: guard_orange_spritesheet_7
+  - first:
+      213: -4454279164722304582
+    second: guard_orange_spritesheet_8
+  - first:
+      213: 2321534191212382741
+    second: guard_orange_spritesheet_0_0
+  - first:
+      213: -5564011200464517085
+    second: guard_orange_spritesheet_1_0
+  - first:
+      213: 2842887377374391216
+    second: guard_orange_spritesheet_2_0
+  - first:
+      213: -6533870683839355020
+    second: guard_orange_spritesheet_3_0
+  - first:
+      213: -4862170324822209485
+    second: guard_orange_spritesheet_0_1
+  - first:
+      213: -1022584167439560376
+    second: guard_orange_spritesheet_1_1
+  - first:
+      213: -1267162734431985294
+    second: guard_orange_spritesheet_2_1
+  - first:
+      213: 7022507400332979643
+    second: guard_orange_spritesheet_3_1
+  - first:
+      213: 8505976277798954476
+    second: guard_orange_spritesheet_0_2
+  - first:
+      213: -714441087312575970
+    second: guard_orange_spritesheet_1_2
+  - first:
+      213: -4424501732070618078
+    second: guard_orange_spritesheet_2_2
+  - first:
+      213: -6332012778128574912
+    second: guard_orange_spritesheet_3_2
+  - first:
+      213: 5576367538287904438
+    second: guard_orange_spritesheet_0_3
+  - first:
+      213: -1076246826360448719
+    second: guard_orange_spritesheet_1_3
+  - first:
+      213: -8603797525489625913
+    second: guard_orange_spritesheet_2_3
+  - first:
+      213: -364213267933553113
+    second: guard_orange_spritesheet_3_3
+  - first:
+      213: -8116343858395520837
+    second: guard_orange_spritesheet_0_4
+  - first:
+      213: 4555258150337369341
+    second: guard_orange_spritesheet_1_4
+  - first:
+      213: 2164793647206905910
+    second: guard_orange_spritesheet_2_4
+  - first:
+      213: 7090194388020956004
+    second: guard_orange_spritesheet_3_4
+  - first:
+      213: -5157006024064861330
+    second: guard_orange_spritesheet_0_5
+  - first:
+      213: -3250165674275955395
+    second: guard_orange_spritesheet_1_5
+  - first:
+      213: 8786051938614689936
+    second: guard_orange_spritesheet_2_5
+  - first:
+      213: 6908973691751036713
+    second: guard_orange_spritesheet_3_5
+  - first:
+      213: 5642011444580036510
+    second: guard_orange_spritesheet_0_6
+  - first:
+      213: -8029788528382972268
+    second: guard_orange_spritesheet_1_6
+  - first:
+      213: 8378402468560274031
+    second: guard_orange_spritesheet_2_6
+  - first:
+      213: -8068637616731872170
+    second: guard_orange_spritesheet_3_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a43210c0fb73020800000000000000
+      internalID: 2321534191212382741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3288406ea49a8c2b0800000000000000
+      internalID: -5564011200464517085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bba7d8e107f37720800000000000000
+      internalID: 2842887377374391216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477aa612b370355a0800000000000000
+      internalID: -6533870683839355020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cc687b9d9168cb0800000000000000
+      internalID: -4862170324822209485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84193da1e1d0fc1f0800000000000000
+      internalID: -1022584167439560376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 271a19de4322a6ee0800000000000000
+      internalID: -1267162734431985294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd26651645f47160800000000000000
+      internalID: 7022507400332979643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce52b1aab5c4b0670800000000000000
+      internalID: 8505976277798954476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e124ac9cd9bc516f0800000000000000
+      internalID: -714441087312575970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c84dfdd130992c0800000000000000
+      internalID: -4424501732070618078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046796e3deb2028a0800000000000000
+      internalID: -6332012778128574912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b68ba03bbc336d40800000000000000
+      internalID: 5576367538287904438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139d420b6376011f0800000000000000
+      internalID: -1076246826360448719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c45ec54cbb299880800000000000000
+      internalID: -8603797525489625913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e165666fd02faf0800000000000000
+      internalID: -364213267933553113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb069655344fc5f80800000000000000
+      internalID: -8116343858395520837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4df072727873f30800000000000000
+      internalID: 4555258150337369341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6383ac14a54ea0e10800000000000000
+      internalID: 2164793647206905910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b057efa3e656260800000000000000
+      internalID: 7090194388020956004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b70171852ae68b0800000000000000
+      internalID: -5157006024064861330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d1d931a8715e2d0800000000000000
+      internalID: -3250165674275955395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090c24b00b35ee970800000000000000
+      internalID: 8786051938614689936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927f653a7fa91ef50800000000000000
+      internalID: 6908973691751036713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_0_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fa1e424837c4e40800000000000000
+      internalID: 5642011444580036510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_1_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ee93880e5709090800000000000000
+      internalID: -8029788528382972268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_2_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f628acb87a0164470800000000000000
+      internalID: 8378402468560274031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_orange_spritesheet_3_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654a75946d0760090800000000000000
+      internalID: -8068637616731872170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      guard_orange_spritesheet_0: -276904933882127586
+      guard_orange_spritesheet_0_0: 2321534191212382741
+      guard_orange_spritesheet_0_1: -4862170324822209485
+      guard_orange_spritesheet_0_2: 8505976277798954476
+      guard_orange_spritesheet_0_3: 5576367538287904438
+      guard_orange_spritesheet_0_4: -8116343858395520837
+      guard_orange_spritesheet_0_5: -5157006024064861330
+      guard_orange_spritesheet_0_6: 5642011444580036510
+      guard_orange_spritesheet_1: 7825513309599640584
+      guard_orange_spritesheet_1_0: -5564011200464517085
+      guard_orange_spritesheet_1_1: -1022584167439560376
+      guard_orange_spritesheet_1_2: -714441087312575970
+      guard_orange_spritesheet_1_3: -1076246826360448719
+      guard_orange_spritesheet_1_4: 4555258150337369341
+      guard_orange_spritesheet_1_5: -3250165674275955395
+      guard_orange_spritesheet_1_6: -8029788528382972268
+      guard_orange_spritesheet_2: -1076612010942686475
+      guard_orange_spritesheet_2_0: 2842887377374391216
+      guard_orange_spritesheet_2_1: -1267162734431985294
+      guard_orange_spritesheet_2_2: -4424501732070618078
+      guard_orange_spritesheet_2_3: -8603797525489625913
+      guard_orange_spritesheet_2_4: 2164793647206905910
+      guard_orange_spritesheet_2_5: 8786051938614689936
+      guard_orange_spritesheet_2_6: 8378402468560274031
+      guard_orange_spritesheet_3: 9114821649008139509
+      guard_orange_spritesheet_3_0: -6533870683839355020
+      guard_orange_spritesheet_3_1: 7022507400332979643
+      guard_orange_spritesheet_3_2: -6332012778128574912
+      guard_orange_spritesheet_3_3: -364213267933553113
+      guard_orange_spritesheet_3_4: 7090194388020956004
+      guard_orange_spritesheet_3_5: 6908973691751036713
+      guard_orange_spritesheet_3_6: -8068637616731872170
+      guard_orange_spritesheet_4: 704573368608511503
+      guard_orange_spritesheet_5: -5193014300742317847
+      guard_orange_spritesheet_6: -8428916193952894358
+      guard_orange_spritesheet_7: -544058933674496050
+      guard_orange_spritesheet_8: -4454279164722304582
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

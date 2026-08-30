@@ -20,6 +20,15 @@ office, elevator hall). The baseline floor plan every later level is built to
 look nothing like. Systems: power terminals, a keycard door, one patrol enemy,
 one locker, room darkness.
 
+Level1 is also the project's real-asset visual prototype: floor and wall
+tiles, the player, the enemy, terminal visuals, and Storage/Security room
+decoration all use the sci-fi-facility-asset-pack (see
+`THIRD_PARTY_ASSETS.md`) instead of the tinted-square placeholder every
+other level still uses. Room layout, colliders, and every gameplay
+reference are unchanged - only new decoration/visual child objects were
+added. Levels2-9, Tutorial, and Rooftop's environment were deliberately
+left on the placeholder pending approval of this prototype.
+
 ## Level2 — Research Laboratories
 
 Theme: decontamination and lab spaces (arrival, decon, central lab,
@@ -114,9 +123,31 @@ restore rooftop access; leads to `RooftopScene`.
 ## RooftopScene
 
 Theme: night, wind, a dim blue-tinted mood overlay. Deliberately the smallest
-map in the game — a straight run past a few AC-unit obstacles to a waiting
-helicopter, with one enemy that's effectively always chasing (a very large
-detection range, not new AI logic) and two hiding spots as an escape valve.
-Reaching the helicopter triggers `RooftopSequence`: player walks to the
-helicopter, it lifts off, the screen fades to black, `WinScene` loads. No
-power system on this floor — it's a pure chase-and-escape beat.
+map in the game, but built as a two-stage finale rather than a plain run.
+
+**Stage 1 - stealth/evasion.** Roof Run has eight obstacles (AC units, vent
+stacks, a satellite dish, crate clusters) for cover, two hiding spots, and
+four enemies: `TheConductor_Final` is active immediately (a map-spanning
+detection range, "already behind you" from the first beat); three more
+(`RoofA`/`RoofB`/`HeliPad`) have realistic detection ranges and engage
+progressively via ordinary distance+line-of-sight as the player advances.
+The Helicopter Pad is physically walled off behind a `RooftopBarrier` at
+the only gap between the two rooms - the helicopter cannot be reached yet.
+
+**Stage 2 - combat finale.** A `WeaponPickup` (a real weapon sprite, see
+`THIRD_PARTY_ASSETS.md`) sits early in Roof Run. Picking it up enables
+`PlayerWeapon`, a mouse-aimed hitscan handgun, and flips the objective to a
+live "Eliminate rooftop security — N / 4" counter. The player is still
+fully vulnerable to enemy contact during this stage - `EnemyHealth` only
+removes an enemy's ability to fight back once it is dead. Once all 4 are
+eliminated, `RooftopCollapseSequence` runs a short scripted sequence
+(warning flash, Cinemachine-driven camera shake, two explosions, the
+barrier sliding open) and restores the "reach the helicopter" objective.
+
+Reaching the helicopter's `EscapeTrigger` fires the existing
+`RooftopSequence` (unchanged, still guarded to run once): every `EnemyAI`
+and the player's own collider are disabled instantly, so nothing can kill
+the player during the walk/lift-off/fade - only the combat stage before it
+is genuinely dangerous. Player walks to the helicopter, it lifts off, the
+screen fades to black, `WinScene` loads. No power system on this floor -
+it's a pure evasion-then-combat escape beat.

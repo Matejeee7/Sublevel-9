@@ -1,0 +1,986 @@
+fileFormatVersion: 2
+guid: 3ef222055f218264696b38bc0f61447d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6194058634678716791
+    second: doodads_spritesheet_0
+  - first:
+      213: 6737136808450298892
+    second: doodads_spritesheet_1
+  - first:
+      213: 3296453381386205319
+    second: doodads_spritesheet_2
+  - first:
+      213: -6379135317629724113
+    second: doodads_spritesheet_3
+  - first:
+      213: -234179971012282779
+    second: doodads_spritesheet_4
+  - first:
+      213: 7636358036605160343
+    second: doodads_spritesheet_5
+  - first:
+      213: -319662518189950655
+    second: doodads_spritesheet_6
+  - first:
+      213: -3997545620922221805
+    second: doodads_spritesheet_7
+  - first:
+      213: 7350898403491347423
+    second: doodads_spritesheet_8
+  - first:
+      213: -8426207858996687258
+    second: doodads_spritesheet_9
+  - first:
+      213: 7046773497273656926
+    second: doodads_spritesheet_10
+  - first:
+      213: -6922606220349163613
+    second: doodads_spritesheet_11
+  - first:
+      213: -4734935258729960682
+    second: doodads_spritesheet_12
+  - first:
+      213: 4775877878449995568
+    second: doodads_spritesheet_13
+  - first:
+      213: -6493086344624104839
+    second: doodads_spritesheet_14
+  - first:
+      213: 58225308043613109
+    second: doodads_spritesheet_15
+  - first:
+      213: -5761062058345371321
+    second: doodads_spritesheet_16
+  - first:
+      213: -6902308005265615600
+    second: doodads_spritesheet_17
+  - first:
+      213: -908165289890818739
+    second: doodads_spritesheet_18
+  - first:
+      213: 1374266385693921384
+    second: doodads_spritesheet_0_0
+  - first:
+      213: 8293971319867787209
+    second: doodads_spritesheet_1_0
+  - first:
+      213: 948898179996851085
+    second: doodads_spritesheet_2_0
+  - first:
+      213: -8454681957979479177
+    second: doodads_spritesheet_3_0
+  - first:
+      213: 964153137068281446
+    second: doodads_spritesheet_4_0
+  - first:
+      213: -6652081390496330029
+    second: doodads_spritesheet_5_0
+  - first:
+      213: 3992033267984138384
+    second: doodads_spritesheet_0_1
+  - first:
+      213: 4748877301691459883
+    second: doodads_spritesheet_1_1
+  - first:
+      213: -8921794321210579630
+    second: doodads_spritesheet_2_1
+  - first:
+      213: 7887879302886230092
+    second: doodads_spritesheet_3_1
+  - first:
+      213: -5302694815160071716
+    second: doodads_spritesheet_4_1
+  - first:
+      213: -8495316995764550947
+    second: doodads_spritesheet_5_1
+  - first:
+      213: -8157651141210129426
+    second: doodads_spritesheet_0_2
+  - first:
+      213: 6749325362014108748
+    second: doodads_spritesheet_1_2
+  - first:
+      213: 8713366809600761137
+    second: doodads_spritesheet_2_2
+  - first:
+      213: 6327130179099968828
+    second: doodads_spritesheet_3_2
+  - first:
+      213: 368138465025967314
+    second: doodads_spritesheet_4_2
+  - first:
+      213: -6719839467922420425
+    second: doodads_spritesheet_5_2
+  - first:
+      213: 3493803386846592491
+    second: doodads_spritesheet_0_3
+  - first:
+      213: -5122453932558253861
+    second: doodads_spritesheet_1_3
+  - first:
+      213: -4732537171160236440
+    second: doodads_spritesheet_2_3
+  - first:
+      213: -3546438052862969725
+    second: doodads_spritesheet_3_3
+  - first:
+      213: 7401742164646142742
+    second: doodads_spritesheet_4_3
+  - first:
+      213: 6305344944784422985
+    second: doodads_spritesheet_5_3
+  - first:
+      213: -839332775235985206
+    second: doodads_spritesheet_0_4
+  - first:
+      213: 1880081886139174093
+    second: doodads_spritesheet_1_4
+  - first:
+      213: 7813455575447997345
+    second: doodads_spritesheet_2_4
+  - first:
+      213: 8184479791265447342
+    second: doodads_spritesheet_3_4
+  - first:
+      213: 4193217499760797834
+    second: doodads_spritesheet_4_4
+  - first:
+      213: -6101216378543204810
+    second: doodads_spritesheet_5_4
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: doodads_spritesheet_0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860db022fff521310800000000000000
+      internalID: 1374266385693921384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_1_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c74ff9d8fa1a1370800000000000000
+      internalID: 8293971319867787209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_2_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b1ab20ed92b2d00800000000000000
+      internalID: 948898179996851085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_3_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773aab5dd8feaaa80800000000000000
+      internalID: -8454681957979479177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_4_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e880c7b2c516d00800000000000000
+      internalID: 964153137068281446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_5_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3deca76383f0fa3a0800000000000000
+      internalID: -6652081390496330029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_0_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0908cb54b1d866730800000000000000
+      internalID: 3992033267984138384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b292c39ceb667e140800000000000000
+      internalID: 4748877301691459883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_2_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2556525a55b6f2480800000000000000
+      internalID: -8921794321210579630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_3_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4880b72f60677d60800000000000000
+      internalID: 7887879302886230092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_4_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd90416192b0966b0800000000000000
+      internalID: -5302694815160071716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_5_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd28d15d3329a1a80800000000000000
+      internalID: -8495316995764550947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_0_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb3c9612833ace80800000000000000
+      internalID: -8157651141210129426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_1_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4cb26448ab6aad50800000000000000
+      internalID: 6749325362014108748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_2_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d9eeba2f81ce870800000000000000
+      internalID: 8713366809600761137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_3_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3548e4106b7ec750800000000000000
+      internalID: 6327130179099968828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_4_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4c704cbf3eb1500800000000000000
+      internalID: 368138465025967314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_5_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d85de6b955eb2a0800000000000000
+      internalID: -6719839467922420425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_0_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed3c0c5bab7c7030800000000000000
+      internalID: 3493803386846592491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_1_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0009bc94369e8b0800000000000000
+      internalID: -5122453932558253861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_2_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e79a25486a25eb0800000000000000
+      internalID: -4732537171160236440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_3_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388bc29716588cec0800000000000000
+      internalID: -3546438052862969725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_4_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613a3ca584548b660800000000000000
+      internalID: 7401742164646142742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_5_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9483e24f1d5118750800000000000000
+      internalID: 6305344944784422985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_0_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac067b3b9471a54f0800000000000000
+      internalID: -839332775235985206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_1_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dccc8fba384671a10800000000000000
+      internalID: 1880081886139174093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_2_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab8fdac278fe6c60800000000000000
+      internalID: 7813455575447997345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_3_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead7db5c10d159170800000000000000
+      internalID: 8184479791265447342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_4_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88a133791d413a30800000000000000
+      internalID: 4193217499760797834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doodads_spritesheet_5_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63613238700245ba0800000000000000
+      internalID: -6101216378543204810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      doodads_spritesheet_0: 6194058634678716791
+      doodads_spritesheet_0_0: 1374266385693921384
+      doodads_spritesheet_0_1: 3992033267984138384
+      doodads_spritesheet_0_2: -8157651141210129426
+      doodads_spritesheet_0_3: 3493803386846592491
+      doodads_spritesheet_0_4: -839332775235985206
+      doodads_spritesheet_1: 6737136808450298892
+      doodads_spritesheet_10: 7046773497273656926
+      doodads_spritesheet_11: -6922606220349163613
+      doodads_spritesheet_12: -4734935258729960682
+      doodads_spritesheet_13: 4775877878449995568
+      doodads_spritesheet_14: -6493086344624104839
+      doodads_spritesheet_15: 58225308043613109
+      doodads_spritesheet_16: -5761062058345371321
+      doodads_spritesheet_17: -6902308005265615600
+      doodads_spritesheet_18: -908165289890818739
+      doodads_spritesheet_1_0: 8293971319867787209
+      doodads_spritesheet_1_1: 4748877301691459883
+      doodads_spritesheet_1_2: 6749325362014108748
+      doodads_spritesheet_1_3: -5122453932558253861
+      doodads_spritesheet_1_4: 1880081886139174093
+      doodads_spritesheet_2: 3296453381386205319
+      doodads_spritesheet_2_0: 948898179996851085
+      doodads_spritesheet_2_1: -8921794321210579630
+      doodads_spritesheet_2_2: 8713366809600761137
+      doodads_spritesheet_2_3: -4732537171160236440
+      doodads_spritesheet_2_4: 7813455575447997345
+      doodads_spritesheet_3: -6379135317629724113
+      doodads_spritesheet_3_0: -8454681957979479177
+      doodads_spritesheet_3_1: 7887879302886230092
+      doodads_spritesheet_3_2: 6327130179099968828
+      doodads_spritesheet_3_3: -3546438052862969725
+      doodads_spritesheet_3_4: 8184479791265447342
+      doodads_spritesheet_4: -234179971012282779
+      doodads_spritesheet_4_0: 964153137068281446
+      doodads_spritesheet_4_1: -5302694815160071716
+      doodads_spritesheet_4_2: 368138465025967314
+      doodads_spritesheet_4_3: 7401742164646142742
+      doodads_spritesheet_4_4: 4193217499760797834
+      doodads_spritesheet_5: 7636358036605160343
+      doodads_spritesheet_5_0: -6652081390496330029
+      doodads_spritesheet_5_1: -8495316995764550947
+      doodads_spritesheet_5_2: -6719839467922420425
+      doodads_spritesheet_5_3: 6305344944784422985
+      doodads_spritesheet_5_4: -6101216378543204810
+      doodads_spritesheet_6: -319662518189950655
+      doodads_spritesheet_7: -3997545620922221805
+      doodads_spritesheet_8: 7350898403491347423
+      doodads_spritesheet_9: -8426207858996687258
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

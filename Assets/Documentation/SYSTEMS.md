@@ -148,3 +148,56 @@ and how they connect — read the source for exact field names.
 - **RooftopSequence** — the escape cutscene: a plain coroutine (not Timeline)
   that walks the player to the helicopter, lifts it off, fades to black via a
   `CanvasGroup`, and loads `WinScene`.
+
+## Rooftop combat finale
+
+Rooftop-only systems - none of these are added to any other scene, so
+Levels1-9 are completely unaffected.
+
+- **PlayerWeapon** — hitscan handgun (a real weapon sprite, see
+  `THIRD_PARTY_ASSETS.md`), disabled until `WeaponPickup.EnableWeapon()`
+  is called. Aims a visual child at the mouse world position every frame
+  (never rotates the player's own root/collider); left mouse button fires
+  a `Physics2D.Raycast` (Default + VisionBlocker layers, so shots stop at
+  walls) and damages the first `EnemyHealth` hit. Unlimited ammo, no
+  reload, per the task's own explicit simplicity preference.
+- **WeaponPickup** — an ordinary `Interactable`, same prompt/interaction
+  path as every other pickup in the game.
+- **EnemyHealth** — configurable HP with a hit flash and a fade-out death,
+  disables its `EnemyAI` on death (Unity does not call collision messages
+  on a disabled `Behaviour`, so a dead enemy can no longer detect/chase/
+  kill the player) and its own collider.
+- **RooftopCollapseSequence** — tracks kills across the registered
+  `EnemyHealth[]`, keeps the objective's "N / 4" counter current, and once
+  all are dead runs a short scripted sequence (warning, camera shake,
+  explosions, the barrier sliding open) before restoring the "reach the
+  helicopter" objective. Scripted `Vector3.Lerp` movement for the barrier,
+  not physics - deterministic, and the barrier's collider only disables
+  once the movement finishes, so the route can never open early.
+- **CameraShake** — drives Cinemachine's own `CinemachineBasicMultiChannel
+  Perlin` noise stage rather than writing to the camera's transform
+  directly. Cinemachine recalculates its camera's transform every frame
+  from its own pipeline, so anything writing to it directly would just be
+  overwritten; Perlin noise is part of that same pipeline, so it composites
+  correctly instead. Requires a `NoiseSettings` profile asset (one was
+  created for this: `Assets/ScriptableObjeects/RooftopShakeNoise.asset`).
+
+## Level1 visual pass
+
+- **DirectionalSprite** — swaps between a pre-drawn down-facing sprite and
+  a side-facing sprite (mirrored via `flipX` for the opposite direction)
+  based on movement, rather than rotating a continuous sprite - correct
+  for hand-drawn character art, where rotation would tip the character
+  sideways. The source spritesheets have no back/up-facing frame, so
+  moving up reuses the down sprite; a disclosed asset limitation, not a
+  fabrication. Used by Level1's player and enemy only.
+- Every Level1 visual (floor, walls, player, enemy, terminals, room
+  decoration) lives on a new child GameObject (usually named `Visual`)
+  separate from the gameplay root/collider/script it decorates - see
+  `THIRD_PARTY_ASSETS.md` for exactly which sprite went where.
+- `PlayerStealth.Hide()`/`Unhide()` used to call
+  `GetComponent<SpriteRenderer>()` directly on the player root; now
+  `GetComponentsInChildren<SpriteRenderer>(true)`, so hiding still fully
+  hides Level1's new child-based player visual (this would otherwise have
+  been a real regression - the player would have stayed visible while
+  hidden in a locker).
