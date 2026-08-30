@@ -141,6 +141,51 @@ public static class SceneQAValidator
             if (b.size.x <= 0.001f || b.size.y <= 0.001f) zeroSized++;
         Check("No zero-sized BoxCollider2D", zeroSized == 0);
 
+        // --- Rooftop combat finale (only relevant when these objects
+        // exist, so this never affects Levels1-9 or Tutorial). ---
+        PlayerWeapon weapon = Object.FindFirstObjectByType<PlayerWeapon>();
+        RooftopCollapseSequence collapse = Object.FindFirstObjectByType<RooftopCollapseSequence>();
+        if (weapon != null || collapse != null)
+        {
+            Check("PlayerWeapon exists", weapon != null);
+            if (weapon != null)
+            {
+                Check("PlayerWeapon.weaponVisual assigned", weapon.weaponVisual != null);
+                Check("PlayerWeapon.weaponVisual starts inactive (cannot shoot before pickup)",
+                    weapon.weaponVisual == null || !weapon.weaponVisual.gameObject.activeSelf);
+                Check("PlayerWeapon.muzzle assigned", weapon.muzzle != null);
+            }
+
+            WeaponPickup[] pickups = Object.FindObjectsByType<WeaponPickup>(FindObjectsSortMode.None);
+            Check("Exactly one WeaponPickup exists", pickups.Length == 1);
+            foreach (var p in pickups)
+                Check(p.name + ".targetWeapon assigned", p.targetWeapon != null);
+
+            EnemyHealth[] allHealth = Object.FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
+            Check("Exactly 4 Rooftop enemies have EnemyHealth", allHealth.Length == 4);
+
+            Check("RooftopCollapseSequence exists", collapse != null);
+            if (collapse != null)
+            {
+                Check("RooftopCollapseSequence.enemies has 4 entries", collapse.enemies != null && collapse.enemies.Length == 4);
+                Check("RooftopCollapseSequence.blocker assigned", collapse.blocker != null);
+                if (collapse.blocker != null)
+                {
+                    Collider2D blockerCol = collapse.blocker.GetComponent<Collider2D>();
+                    Check("Barrier starts with its collider enabled (cannot open early)",
+                        blockerCol != null && blockerCol.enabled && !blockerCol.isTrigger);
+                }
+                Check("RooftopCollapseSequence.cameraShake assigned", collapse.cameraShake != null);
+                Check("RooftopCollapseSequence.finalObjective is non-empty", !string.IsNullOrEmpty(collapse.finalObjective));
+
+                if (collapse.enemies != null)
+                {
+                    foreach (var e in collapse.enemies)
+                        Check("RooftopCollapseSequence has no null enemy entries", e != null);
+                }
+            }
+        }
+
         Debug.Log("QA_VALIDATION_DONE scene=" + scenePath + " pass=" + pass + " fail=" + fail);
     }
 }
