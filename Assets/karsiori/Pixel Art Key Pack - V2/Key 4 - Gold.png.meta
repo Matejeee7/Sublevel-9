@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TREE 1_SANDY GREEN_0
+      name: Key 4 - Gold_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 57
+        width: 14
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
       spriteID: ea2b42b14780fb7a0800000000000000
-      internalID: -6359354854059232594
+      internalID: 5595298426150593806
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TREE 1_SANDY GREEN_0: -6359354854059232594
+      Key 4 - Gold_0: 5595298426150593806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
