@@ -74,6 +74,8 @@ public class RooftopSequence : MonoBehaviour
         if (playerSprite != null)
             playerSprite.enabled = false;
 
+        FeedbackUI.Flash("Extraction complete.");
+
         if (helicopter != null)
         {
             // The idle hover/bob writes to this same transform every frame;
