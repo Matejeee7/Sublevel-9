@@ -74,6 +74,13 @@ public class RooftopSequence : MonoBehaviour
         if (playerSprite != null)
             playerSprite.enabled = false;
 
+        // The equipped weapon is a separate child SpriteRenderer
+        // (PlayerWeapon.weaponVisual) - hiding the player's own sprite
+        // above doesn't touch it, so without this it would keep
+        // rendering, left floating at the extraction point during liftoff.
+        if (PlayerWeapon.Instance != null && PlayerWeapon.Instance.weaponVisual != null)
+            PlayerWeapon.Instance.weaponVisual.gameObject.SetActive(false);
+
         FeedbackUI.Flash("Extraction complete.");
 
         if (helicopter != null)
