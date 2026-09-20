@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pausePanel;
-    public GameObject settingsPanel;
 
     private bool isPaused = false;
 
@@ -24,12 +23,6 @@ public class PauseMenuController : MonoBehaviour
     {
         if (!Input.GetKeyDown(KeyCode.Escape))
             return;
-
-        if (settingsPanel != null && settingsPanel.activeSelf)
-        {
-            CloseSettings();
-            return;
-        }
 
         if (isPaused)
         {
@@ -73,18 +66,6 @@ public class PauseMenuController : MonoBehaviour
             if (playerMovement != null)
                 playerMovement.enabled = true;
         }
-    }
-
-    public void OpenSettings()
-    {
-        if (settingsPanel != null)
-            settingsPanel.SetActive(true);
-    }
-
-    public void CloseSettings()
-    {
-        if (settingsPanel != null)
-            settingsPanel.SetActive(false);
     }
 
     public void GoToMainMenu()
