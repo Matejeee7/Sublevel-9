@@ -18,7 +18,7 @@ public class GeneratorUpgrade : Interactable
 
         if (powerManager != null)
         {
-            powerManager.maxPower = newMaxPower;
+            powerManager.SetMaxPower(newMaxPower);
         }
 
         activated = true;
