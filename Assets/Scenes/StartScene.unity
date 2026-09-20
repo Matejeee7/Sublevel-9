@@ -1146,6 +1146,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 816870982}
+  hideWhileOpen:
+  - {fileID: 464089581}
+  - {fileID: 1204090675}
+  - {fileID: 1752228239}
+  - {fileID: 934471324}
+  - {fileID: 1389485071}
+  - {fileID: 1396341987}
+  - {fileID: 1674429262}
 --- !u!1 &588309297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15, g: 0.18, b: 0.2, a: 1}
+  m_Color: {r: 0.06, g: 0.18, b: 0.25, a: 0.95}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
