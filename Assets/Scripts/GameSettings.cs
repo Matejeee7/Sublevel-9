@@ -1,16 +1,21 @@
 using UnityEngine;
 
 // Simple PlayerPrefs-backed settings, applied immediately on change.
-// Master volume drives AudioListener.volume. Music and SFX volume are
-// multipliers read by MusicManager (music) and ButtonHoverSound (the UI
-// sound effect). Changed fires whenever any value changes so audio
-// sources that are already playing can update at once.
+// All three volumes are plain 0..1 linear values (0 = silent, 1 = full).
+// Master drives AudioListener.volume, Music is the music AudioSource volume
+// (MusicManager) and SFX is the volume of the UI hover sound (ButtonHoverSound).
+// Changed fires whenever any value changes so audio that is already playing
+// can update at once.
 public static class GameSettings
 {
     private const string MasterVolumeKey = "MasterVolume";
     private const string MusicVolumeKey = "MusicVolume";
     private const string SfxVolumeKey = "SfxVolume";
     private const string FullscreenKey = "Fullscreen";
+
+    // Used until the player saves a value of their own.
+    public const float DefaultMusicVolume = 0.8f;
+    public const float DefaultSfxVolume = 0.8f;
 
     public static event System.Action Changed;
 
@@ -27,7 +32,7 @@ public static class GameSettings
 
     public static float MusicVolume
     {
-        get { return PlayerPrefs.GetFloat(MusicVolumeKey, 1f); }
+        get { return PlayerPrefs.GetFloat(MusicVolumeKey, DefaultMusicVolume); }
         set
         {
             PlayerPrefs.SetFloat(MusicVolumeKey, value);
@@ -37,7 +42,7 @@ public static class GameSettings
 
     public static float SfxVolume
     {
-        get { return PlayerPrefs.GetFloat(SfxVolumeKey, 1f); }
+        get { return PlayerPrefs.GetFloat(SfxVolumeKey, DefaultSfxVolume); }
         set
         {
             PlayerPrefs.SetFloat(SfxVolumeKey, value);

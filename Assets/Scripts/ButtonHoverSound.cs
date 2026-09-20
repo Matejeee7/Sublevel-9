@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Plays a short, quiet blip the moment the pointer enters a menu button.
+// Plays a short blip the moment the pointer enters a menu button.
 // PointerEnter fires once per hover (not every frame the pointer stays
 // over the button), so this can't spam the sound while the mouse sits
 // still on a button. Loudness follows the SFX volume setting.
@@ -9,7 +9,6 @@ using UnityEngine.EventSystems;
 public class ButtonHoverSound : MonoBehaviour, IPointerEnterHandler
 {
     public AudioClip hoverClip;
-    [Range(0f, 1f)] public float volume = 0.25f;
 
     private AudioSource source;
 
@@ -23,6 +22,6 @@ public class ButtonHoverSound : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hoverClip != null)
-            source.PlayOneShot(hoverClip, volume * GameSettings.SfxVolume);
+            source.PlayOneShot(hoverClip, GameSettings.SfxVolume);
     }
 }

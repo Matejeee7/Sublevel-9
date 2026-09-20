@@ -147,10 +147,4 @@ MonoBehaviour:
   rooftopMusic: {fileID: 8300000, guid: c728c4a8a20c580488c6f3e9ea5c6c67, type: 3}
   winMusic: {fileID: 8300000, guid: eb8cbeea45eb83249a3742b23d9cd0bc, type: 3}
   gameOverMusic: {fileID: 8300000, guid: 1264662b7fa942a4dbd36dd86c66d236, type: 3}
-  musicVolume: 0.35
   fadeDuration: 0.8
-  startSceneGain: 12
-  gameplayGain: 9
-  rooftopGain: 15
-  winGain: 5
-  gameOverGain: 5
