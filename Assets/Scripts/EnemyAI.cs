@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    private enum State { Patrol, Investigate, Chase, Search }
+    private enum State { Patrol, Investigate, Chase, Search, Return }
 
     [Header("Movement")]
     public float moveSpeed = 2f;
@@ -24,6 +25,12 @@ public class EnemyAI : MonoBehaviour
     [Header("Alert")]
     public float investigateWaitTime = 2f;
     public float searchTime = 3f;
+    // A search/investigation that has not finished by then (for example the
+    // spot is blocked by the hidden player) is abandoned and the guard goes home.
+    public float maxSearchDuration = 8f;
+
+    [Header("Return Home")]
+    public float trailSpacing = 1f;
 
     private Rigidbody2D rb;
     private State state = State.Patrol;
@@ -36,10 +43,23 @@ public class EnemyAI : MonoBehaviour
 
     private AlarmController alarmController;
 
+    // Where the guard started in the scene. After losing the player it walks
+    // back here and restarts its patrol. The trail is the route it took away
+    // from its post; it is walked in reverse so the way home never cuts through
+    // a wall (guards move in straight lines and have no pathfinding).
+    private Vector2 homePosition;
+    private readonly List<Vector2> trail = new List<Vector2>();
+    private State lastState = State.Patrol;
+    private float alertElapsed;
+    private Vector2 lastProgressPosition;
+    private float progressTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         alarmController = FindFirstObjectByType<AlarmController>();
+        homePosition = transform.position;
+        lastProgressPosition = homePosition;
     }
 
     void FixedUpdate()
@@ -59,7 +79,10 @@ public class EnemyAI : MonoBehaviour
             state = State.Search;
             alertTarget = player.position;
             alertStateTimer = 0f;
+            alertElapsed = 0f;
         }
+
+        TrackTrail();
 
         switch (state)
         {
@@ -75,7 +98,38 @@ public class EnemyAI : MonoBehaviour
             case State.Search:
                 GoToAlertTargetThenReturn(searchTime);
                 break;
+            case State.Return:
+                ReturnHome();
+                break;
         }
+    }
+
+    // Remembers the path walked away from the post (or from the last point
+    // of a return trip that was interrupted by seeing the player again).
+    private void TrackTrail()
+    {
+        bool away = state == State.Chase || state == State.Investigate || state == State.Search;
+
+        if (state != lastState)
+        {
+            if (away && (lastState == State.Patrol || lastState == State.Return))
+                AddCrumb(true);
+            else if (state == State.Patrol)
+                trail.Clear();
+
+            lastState = state;
+        }
+
+        if (away)
+            AddCrumb(false);
+    }
+
+    private void AddCrumb(bool force)
+    {
+        Vector2 position = transform.position;
+
+        if (trail.Count == 0 || Vector2.Distance(trail[trail.Count - 1], position) >= (force ? 0.05f : trailSpacing))
+            trail.Add(position);
     }
 
     private bool IsPlayerVisible()
@@ -129,6 +183,7 @@ public class EnemyAI : MonoBehaviour
         state = State.Investigate;
         alertTarget = position;
         alertStateTimer = 0f;
+        alertElapsed = 0f;
     }
 
     void Chase()
@@ -174,6 +229,14 @@ public class EnemyAI : MonoBehaviour
 
     void GoToAlertTargetThenReturn(float waitTime)
     {
+        alertElapsed += Time.fixedDeltaTime;
+
+        if (alertElapsed >= maxSearchDuration)
+        {
+            BeginReturn();
+            return;
+        }
+
         Vector2 toTarget = alertTarget - (Vector2)transform.position;
         float distance = toTarget.magnitude;
 
@@ -187,10 +250,61 @@ public class EnemyAI : MonoBehaviour
         alertStateTimer += Time.fixedDeltaTime;
 
         if (alertStateTimer >= waitTime)
+            BeginReturn();
+    }
+
+    private void BeginReturn()
+    {
+        state = State.Return;
+        alertStateTimer = 0f;
+        alertElapsed = 0f;
+        progressTimer = 0f;
+        lastProgressPosition = transform.position;
+    }
+
+    // Walks back along the trail to the post, then restarts the patrol from
+    // its first point (or stands still if the guard has no patrol points).
+    void ReturnHome()
+    {
+        Vector2 target = trail.Count > 0 ? trail[trail.Count - 1] : homePosition;
+        Vector2 toTarget = target - (Vector2)transform.position;
+
+        if (toTarget.magnitude > arriveThreshold)
         {
-            state = State.Patrol;
-            alertStateTimer = 0f;
+            rb.linearVelocity = toTarget.normalized * moveSpeed;
+
+            // Blocked (for example by a door that closed meanwhile): skip
+            // this step instead of standing still forever.
+            progressTimer += Time.fixedDeltaTime;
+            if (progressTimer >= 1.5f)
+            {
+                if (Vector2.Distance(lastProgressPosition, transform.position) < 0.3f)
+                    ArriveAtReturnStep();
+
+                lastProgressPosition = transform.position;
+                progressTimer = 0f;
+            }
+            return;
         }
+
+        ArriveAtReturnStep();
+    }
+
+    private void ArriveAtReturnStep()
+    {
+        progressTimer = 0f;
+        lastProgressPosition = transform.position;
+
+        if (trail.Count > 0)
+        {
+            trail.RemoveAt(trail.Count - 1);
+            return;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        currentPatrolIndex = 0;
+        patrolWaitTimer = 0f;
+        state = State.Patrol;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
