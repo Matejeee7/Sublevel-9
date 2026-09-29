@@ -35,3 +35,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.app
+AudioOriginals_backup/
+AudioOriginals_backup/
+.claude/
